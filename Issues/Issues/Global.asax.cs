@@ -9,7 +9,6 @@ namespace Issues
         {
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
-
         }
     }
 }

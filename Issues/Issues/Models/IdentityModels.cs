@@ -1,12 +1,10 @@
-﻿using System.Data.Entity;
-using Microsoft.AspNet.Identity.EntityFramework;
+﻿using Microsoft.AspNet.Identity.EntityFramework;
+using System.Data.Entity;
 
 namespace Issues.Models
 {
-
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
-
         public DbSet<Profile> Profile { get; set; }
 
         public ApplicationDbContext()

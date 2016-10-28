@@ -1,15 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Web;
 
 namespace Issues.Models
 {
     public class Profile
     {
-        [Key,ForeignKey("User")]
+        [Key, ForeignKey("User")]
         public string Id { get; set; }
 
         [Required]
@@ -39,9 +36,5 @@ namespace Issues.Models
         public byte[] Version { get; set; }
 
         public ApplicationUser User { get; set; }
-       
-
-
-
     }
 }
