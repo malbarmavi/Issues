@@ -7,6 +7,7 @@ namespace Issues.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
 
+        public DbSet<Profile> Profile { get; set; }
 
         public ApplicationDbContext()
             : base("IssuesDataBae", throwIfV1Schema: false)
