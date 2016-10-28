@@ -7,8 +7,11 @@ namespace Issues.Models
 {
     public class ApplicationUser : IdentityUser
     {
-        public int ProfileId { get; set; }
         public Profile Profile { get; set; }
+
+        public Company Company { get; set; }
+
+        public int CompanyId { get; set; }
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {

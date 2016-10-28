@@ -7,6 +7,8 @@ namespace Issues.Models
     {
         public DbSet<Profile> Profile { get; set; }
 
+        public DbSet<Company> Company { get; set; }
+
         public ApplicationDbContext()
             : base("IssuesDataBae", throwIfV1Schema: false)
         {

@@ -159,9 +159,18 @@
     <Compile Include="Migrations\201610280800460_initial.Designer.cs">
       <DependentUpon>201610280800460_initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201610281759512_AddCompanyModel.cs" />
+    <Compile Include="Migrations\201610281759512_AddCompanyModel.Designer.cs">
+      <DependentUpon>201610281759512_AddCompanyModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610281828197_FixUserProfile.cs" />
+    <Compile Include="Migrations\201610281828197_FixUserProfile.Designer.cs">
+      <DependentUpon>201610281828197_FixUserProfile.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
+    <Compile Include="Models\Company.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Profile.cs" />
@@ -245,6 +254,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201610280800460_initial.resx">
       <DependentUpon>201610280800460_initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610281759512_AddCompanyModel.resx">
+      <DependentUpon>201610281759512_AddCompanyModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610281828197_FixUserProfile.resx">
+      <DependentUpon>201610281828197_FixUserProfile.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

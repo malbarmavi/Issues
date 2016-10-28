@@ -154,58 +154,54 @@ namespace Issues.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser
+
+                try
                 {
-                    UserName = model.Email,
-                    Email = model.Email,
-                    Profile = new Profile()
+                    var user = new ApplicationUser
                     {
-                        DateOfCreate = DateTime.Now,
-                        DateOfUpdate = DateTime.Now,
-                        Job = "Not Set",
-                        Address = "Not Set",
-                        FirstName = model.FirstName,
-                        LastName = model.LastName,
-                        Gender = true
+                        UserName = model.Email,
+                        Email = model.Email,
+                        Company = new Company()
+                        {
+                            Address = "Not Set",
+                            Name = "Not Set",
+                            DateOfCreate = DateTime.Now,
+                            DateOfUpdate = DateTime.Now
+                        },
+                        Profile = new Profile()
+                        {
+                            DateOfCreate = DateTime.Now,
+                            DateOfUpdate = DateTime.Now,
+                            Job = "Not Set",
+                            Address = "Not Set",
+                            FirstName = model.FirstName,
+                            LastName = model.LastName,
+                            Gender = true
+                        }
+                    };
+
+                    var result = await UserManager.CreateAsync(user, model.Password);
+                    if (result.Succeeded)
+                    {
+                    
+                        await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
+
+                        // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
+                        // Send an email with this link
+                        // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
+                        // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
+                        // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
+
+                        return RedirectToAction("Index", "Home");
                     }
-                };
-
-                var result = await UserManager.CreateAsync(user, model.Password);
-                if (result.Succeeded)
-                {
-                    /*  var _context = new ApplicationDbContext();
-
-                      var pr = _context.Users.Single(e => e.Id == "cb3e443c-99af-41f8-8b6d-d6acfbd835f7");
-                      _context.Profile.Add(new Profile() {
-                          User =pr ,
-                          DateOfCreate=DateTime.Now,
-                          DateOfUpdate=DateTime.Now,
-                          Job="",
-                          Address="",
-                          FirstName="",
-                          LastName="",
-                          Gender=true,
-                          Version= new byte[] {1,2,3,4,5,6 }
-                      });
-                      try
-                      {
-                          _context.SaveChanges();
-                      }
-                      catch (Exception ex)
-                      {
-                          _context.Dispose();
-                      }*/
-                    await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
-
-                    // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
-                    // Send an email with this link
-                    // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
-                    // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
-                    // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
-
-                    return RedirectToAction("Index", "Home");
+                    AddErrors(result);
                 }
-                AddErrors(result);
+
+                catch (Exception e)
+                {
+
+
+                }
             }
 
             // If we got this far, something failed, redisplay form
