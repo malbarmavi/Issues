@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using System.ComponentModel.DataAnnotations;
 using System.Security.Claims;
 using System.Threading.Tasks;
 
@@ -7,8 +8,10 @@ namespace Issues.Models
 {
     public class ApplicationUser : IdentityUser
     {
+        [Required]
         public Profile Profile { get; set; }
 
+        [Required]
         public Company Company { get; set; }
 
         public int CompanyId { get; set; }

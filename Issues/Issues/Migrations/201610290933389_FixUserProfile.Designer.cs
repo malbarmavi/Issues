@@ -13,7 +13,7 @@ namespace Issues.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201610281828197_FixUserProfile"; }
+            get { return "201610290933389_FixUserProfile"; }
         }
         
         string IMigrationMetadata.Source

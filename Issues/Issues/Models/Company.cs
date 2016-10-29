@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace Issues.Models
@@ -21,5 +22,7 @@ namespace Issues.Models
 
         [Timestamp]
         public byte[] Version { get; set; }
+
+        public List<ApplicationUser> Users { get; set; }
     }
 }
