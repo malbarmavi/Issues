@@ -251,6 +251,7 @@ paket-files/
 .idea/
 *.sln.iml
 
+# mbarmawi
+*.js
+*.css
 
-[Ss]cripts/*.js
-[Cc]ontent/*.css
