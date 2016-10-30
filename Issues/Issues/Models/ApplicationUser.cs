@@ -11,7 +11,6 @@ namespace Issues.Models
         [Required]
         public Profile Profile { get; set; }
 
-        [Required]
         public Company Company { get; set; }
 
         public int CompanyId { get; set; }

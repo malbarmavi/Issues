@@ -32,6 +32,8 @@ namespace Issues.Models
 
         public DateTime DateOfUpdate { get; set; }
 
+        public string PhoneNumber { get; set; }
+
         [Timestamp]
         public byte[] Version { get; set; }
 

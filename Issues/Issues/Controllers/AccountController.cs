@@ -155,8 +155,7 @@ namespace Issues.Controllers
             if (ModelState.IsValid)
             {
 
-                try
-                {
+              
                     var user = new ApplicationUser
                     {
                         UserName = model.Email,
@@ -176,6 +175,7 @@ namespace Issues.Controllers
                             Address = "Not Set",
                             FirstName = model.FirstName,
                             LastName = model.LastName,
+                            PhoneNumber= "Not Set",
                             Gender = true
                         }
                     };
@@ -197,12 +197,8 @@ namespace Issues.Controllers
                     AddErrors(result);
                 }
 
-                catch (Exception e)
-                {
-
-
-                }
-            }
+              
+            
 
             // If we got this far, something failed, redisplay form
             return View(model);
