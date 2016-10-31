@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace Issues.ViewModel
+namespace Issues.ViewModels
 {
     public class UserDetailsViewModel
     {
