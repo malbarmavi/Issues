@@ -9,6 +9,8 @@ namespace Issues.Models
 
         public DbSet<Company> Company { get; set; }
 
+        public DbSet<Tasks> Tasks { get; set; }
+
         public ApplicationDbContext()
             : base("IssuesDataBae", throwIfV1Schema: false)
         {
