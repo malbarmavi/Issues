@@ -11,10 +11,12 @@ namespace Issues.Models
 
         [Required]
         [MaxLength(150)]
+        [Display(Name = "First Name")]
         public string FirstName { get; set; }
 
         [Required]
         [MaxLength(150)]
+        [Display(Name = "Last Name")]
         public string LastName { get; set; }
 
         [Required]

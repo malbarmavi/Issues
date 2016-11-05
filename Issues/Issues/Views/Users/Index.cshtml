@@ -5,53 +5,78 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
+
+<ol class="breadcrumb">
+    <li><a href="@Url.Action("Index","Home") ">Dashboard</a></li>
+    <li class="active">Users</li>
+</ol>
+
+
+
+
+<div class="panel panel-default box-shadow" >
+    <div class="panel-heading">
+        <h5 class="">
+            <span class="header-title"> Users list </span><span class="badge badge-default">@Model.Count()</span>
+            <a href="@Url.Action("Create")" class="pull-right"><i class="fa fa-plus" aria-hidden="true"></i>  Add user </a>
+        </h5>
        
-        
-        <th>
-            @Html.DisplayNameFor(model => model.Profile.FirstName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Profile.LastName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Email)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Profile.Job)
-        </th>
-      
-        <th></th>
-    </tr>
+       
+    </div>
+    <div class="panel-body">
+        <div class="table-responsive">
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Profile.FirstName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Profile.LastName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Email)
-        </td>
-     
-        <td>
-            @Html.DisplayFor(modelItem => item.Profile.Job)
-        </td>
-    
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
-    </tr>
-}
+        <table class="table border white-bg box-shadow table-radius" >
+            <tr>
 
-</table>
+                <th>
+                    @Html.DisplayNameFor(model => model.Profile.FirstName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Profile.LastName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Email)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Profile.Job)
+                </th>
+
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Profile.FirstName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Profile.LastName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Email)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Profile.Job)
+                    </td>
+
+                    <td class="text-right">
+                        <div class="btn-group btn-group-sm" role="group" aria-label="...">
+                            <a class="btn btn-default" href="@Url.Action("Edit", new { id=item.Id })"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                            <a class="btn btn-default" href="@Url.Action("Details", new { id=item.Id })"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                            <a class="btn btn-default" href="@Url.Action("Delete", new { id=item.Id })"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                        </div>
+
+
+                    </td>
+                </tr>
+            }
+
+        </table>
+        </div>
+    </div>
+</div> 
+

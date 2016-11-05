@@ -5,7 +5,12 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Details</h2>
+<h2></h2>
+<ol class="breadcrumb">
+    <li><a href="@Url.Action("Index","Home") ">Dashboard</a></li>
+    <li><a href="@Url.Action("Index","Users")">Users</a></li>
+    <li class="active">Details</li>
+</ol>
 
 <div>
     <h4></h4>

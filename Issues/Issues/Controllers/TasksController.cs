@@ -12,6 +12,7 @@ using Issues.ViewModels;
 
 namespace Issues.Controllers
 {
+    [Authorize]
     public class TasksController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
