@@ -1,0 +1,82 @@
+﻿.checkBox {
+    padding: 0;
+    position: relative;
+    display: block;
+    margin: 0 auto 0 -6px;
+    
+}
+
+    .checkBox input[type=checkbox] ,.checkBox input[type=radio]{
+        cursor: pointer;
+        -webkit-appearance: none;
+        outline: none;
+    }
+
+        .checkBox input[type=checkbox]:after, .checkBox input[type=checkbox]:before ,.checkBox input[type=radio]:after, .checkBox input[type=radio]:before {
+            position: absolute;
+            top: 0;
+            display: inline-block;
+            -moz-transition: all 0.2s ease-in-out;
+            -o-transition: all 0.2s ease-in-out;
+            -webkit-transition: all 0.2s ease-in-out;
+            transition: all 0.2s ease-in-out;
+            border: 1px solid #ccc;
+        }
+
+.gender.checkBox input[type=checkbox]:after, .gender.checkBox input[type=checkbox]:before {
+    border: 1px solid #e8257d;
+}
+
+.checkBox input[type=checkbox]:before,.checkBox input[type=radio]:before {
+    content: '';
+    width: 50px;
+    height: 23px;
+    background-color: rgba(242, 242, 242, 0.87);
+    border-radius: 2px;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+}
+
+.gender.checkBox input[type=checkbox]:before {
+    background-color: #F981B7;
+}
+
+.checkBox input[type=checkbox]:after,.checkBox input[type=radio]:after {
+    content: '';
+    top: 3px;
+    width: 18px;
+    height: 18px;
+    background: #fff;
+    border: 1px solid #ccc;
+    -moz-transform: translateX(29px);
+    -ms-transform: translateX(29px);
+    -o-transform: translateX(29px);
+    -webkit-transform: translateX(29px);
+    transform: translateX(29px);
+    border-radius: 50%;
+}
+
+.checkBox input[type=checkbox]:checked:after,.checkBox input[type=radio]:checked:after {
+    -moz-transform: translateX(2px);
+    -ms-transform: translateX(2px);
+    -o-transform: translateX(2px);
+    -webkit-transform: translateX(2px);
+    transform: translateX(2px);
+    border-color: #0D9045;
+}
+
+.gender.checkBox input[type=checkbox]:checked:after {
+    border-color: #0C5F96;
+}
+
+.checkBox input[type=checkbox]:checked:before,.checkBox input[type=radio]:checked:before {
+    background: #5cb85c;
+    border: 1px solid #0D9045;
+}
+
+.gender.checkBox input[type=checkbox]:checked:before {
+    background: #3498db;
+    border-color: #0C5F96;
+}
+
+.gender {
+}
