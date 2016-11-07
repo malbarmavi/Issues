@@ -17,15 +17,35 @@
     white-space: normal;
 }
 
-/* Set width on the form input elements since they're 100% wide by default */
-input,
-select,
-textarea {
-    max-width: 280px;
-}
 
 /* validation style*/
 .input-validation-error {
-        border: 1px solid rgba(200,0,0,0.5);
+    border: 1px solid rgba(200,0,0,0.5);
     box-shadow: 0 2px 6px rgba(255,0,0,0.3) inset;
+}
+
+.card {
+    border-radius: 2px;
+    background-color: #fff;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.display-block {
+    display: block;
+}
+
+.nice-col-padding .col-md-4, .nice-col-padding .col-sm-6 {
+    padding-left: 5px !important;
+    padding-right: 5px !important;
+}
+
+.dropdown-arrow {
+    color: #999 !important;
+    cursor: pointer;
+    font-size: 9pt !important;
+}
+
+.margin-bottom-15 { 
+    margin-bottom:15px;
 }
