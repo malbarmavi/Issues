@@ -22,7 +22,7 @@ namespace Issues.Controllers
         // GET: Users
         public async Task<ActionResult> Index()
         {
-            var applicationUsers = db.Users.Include(a => a.Company).Include(a => a.Profile);
+            var applicationUsers = db.Users.Include(u => u.Tasks).Include(u => u.Profile);
             return View(await applicationUsers.ToListAsync());
         }
 
@@ -40,8 +40,8 @@ namespace Issues.Controllers
                 return HttpNotFound();
             }
 
-            UserDetailsViewModel user = new UserDetailsViewModel
-            {
+            UserDetailsViewModel user = new UserDetailsViewModel {
+                Id = applicationUser.Id,
                 Email = applicationUser.Email,
                 FirstName = applicationUser.Profile.FirstName,
                 LastName = applicationUser.Profile.LastName,
@@ -143,6 +143,7 @@ namespace Issues.Controllers
                 ApplicationUser user = await db.Users.Include(u => u.Profile).SingleAsync(u => u.Id == id);
 
                 user.Email = model.Email;
+                user.UserName = model.Email;
                 user.Profile.FirstName = model.FirstName;
                 user.Profile.LastName = model.LastName;
                 user.Profile.Job = model.Job;

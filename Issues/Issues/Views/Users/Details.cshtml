@@ -5,92 +5,114 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2></h2>
 <ol class="breadcrumb">
     <li><a href="@Url.Action("Index","Home") ">Dashboard</a></li>
     <li><a href="@Url.Action("Index","Users")">Users</a></li>
     <li class="active">Details</li>
 </ol>
 
-<div>
-    <h4></h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Email)
-        </dt>
+<div class="row">
+    <div class="col-md-3 col-sm-3"></div>
+    <div class="col-md-6 col-sm-6 col-x-12">
+        <div class="panel panel-default box-shadow">
+            <div class="panel-heading">
+                <h5 class="">
+                    &nbsp;
+                    <a href="@Url.Action("Delete", new { id=Model.Id})" class="pull-right margin-left-15"><i class="fa fa-trash" aria-hidden="true"></i> Delete</a>
+                    <a href="@Url.Action("Edit",new { id = Model.Id })" class="pull-right"><i class="fa fa-pencil" aria-hidden="true"></i> Edit </a>
+                </h5>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label " })
 
-        <dd>
-            @Html.DisplayFor(model => model.Email)
-        </dd>
+                            <span class="form-control">
 
-        <dt>
-            @Html.DisplayNameFor(model => model.FirstName)
-        </dt>
+                                @Model.Email
+                            </span>
 
-        <dd>
-            @Html.DisplayFor(model => model.FirstName)
-        </dd>
+                        </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.LastName)
-        </dt>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.FirstName, htmlAttributes: new { @class = "control-label" })
 
-        <dd>
-            @Html.DisplayFor(model => model.LastName)
-        </dd>
+                            <span class="form-control">
+                                @Model.FirstName
+                            </span>
+                        </div>
+                    </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Address)
-        </dt>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.LastName, htmlAttributes: new { @class = "control-label" })
 
-        <dd>
-            @Html.DisplayFor(model => model.Address)
-        </dd>
+                            <span class="form-control">
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Gender)
-        </dt>
+                                @Model.LastName
+                            </span>
 
-        <dd>
-            @Html.DisplayFor(model => model.Gender)
-        </dd>
+                        </div>
+                    </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Job)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Job)
-        </dd>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Address, htmlAttributes: new { @class = "control-label" })
 
-        <dt>
-            @Html.DisplayNameFor(model => model.DateOfCreate)
-        </dt>
+                            <span class="form-control">
 
-        <dd>
-            @Html.DisplayFor(model => model.DateOfCreate)
-        </dd>
+                                @Model.Address
+                            </span>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.DateOfUpdate)
-        </dt>
+                        </div>
+                    </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.DateOfUpdate)
-        </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.PhoneNumber)
-        </dt>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Job, htmlAttributes: new { @class = "control-label" })
 
-        <dd>
-            @Html.DisplayFor(model => model.PhoneNumber)
-        </dd>
+                            <span class="form-control">
 
-    </dl>
+                                @Model.Job
+                            </span>
+
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.PhoneNumber, htmlAttributes: new { @class = "control-label" })
+
+                            <span class="form-control">
+
+                                @Model.PhoneNumber
+                            </span>
+
+                        </div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Gender, htmlAttributes: new { @class = "control-label" })
+                            <span class="form-control">
+                                <label class="checkBox gender">
+                                    @Html.CheckBoxFor(model => model.Gender , htmlAttributes: new { @class = "control-label", disabled = "disabled" })
+                                </label>
+                            </span>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
-    @Html.ActionLink("Back to List", "Index")
+    
+    <a href="@Url.Action("Index")" ><i class="fa fa-chevron-left font-size-8" aria-hidden="true"></i> Back to List</a>
 </p>

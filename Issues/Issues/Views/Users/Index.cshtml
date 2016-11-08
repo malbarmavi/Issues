@@ -5,78 +5,58 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-
-
 <ol class="breadcrumb">
     <li><a href="@Url.Action("Index","Home") ">Dashboard</a></li>
     <li class="active">Users</li>
 </ol>
 
-
-
-
-<div class="panel panel-default box-shadow" >
+<div class="panel panel-default box-shadow">
     <div class="panel-heading">
         <h5 class="">
             <span class="header-title"> Users list </span><span class="badge badge-default">@Model.Count()</span>
             <a href="@Url.Action("Create")" class="pull-right"><i class="fa fa-plus" aria-hidden="true"></i>  Add user </a>
         </h5>
-       
-       
     </div>
     <div class="panel-body">
-        <div class="table-responsive">
+        <div class="nice-col-padding">
+            @foreach (var item in Model) {
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <div class="border card">
+                        <div class="text-right margin-bottom-15">
 
-        <table class="table border white-bg box-shadow table-radius" >
-            <tr>
+                            <div class="dropdown pull-right">
+                                <i class="fa fa-chevron-down dropdown-toggle dropdown-arrow" id="control-menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"></i>
 
-                <th>
-                    @Html.DisplayNameFor(model => model.Profile.FirstName)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Profile.LastName)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Email)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Profile.Job)
-                </th>
+                                <ul class="dropdown-menu" aria-labelledby="control-menu">
+                                    <li><a class="" href="@Url.Action("Edit", new { id=item.Id })"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</a></li>
+                                    <li><a class="" href="@Url.Action("Details", new { id=item.Id })"><i class="fa fa-list" aria-hidden="true"></i> Details</a></li>
+                                    <li><a class="" href="@Url.Action("Delete", new { id=item.Id })"><i class="fa fa-trash" aria-hidden="true"></i> Delete</a></li>
+                                </ul>
 
-                <th></th>
-            </tr>
-
-            @foreach (var item in Model)
-            {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Profile.FirstName)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Profile.LastName)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Email)
-                    </td>
-
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Profile.Job)
-                    </td>
-
-                    <td class="text-right">
-                        <div class="btn-group btn-group-sm" role="group" aria-label="...">
-                            <a class="btn btn-default" href="@Url.Action("Edit", new { id=item.Id })"><i class="fa fa-pencil" aria-hidden="true"></i></a>
-                            <a class="btn btn-default" href="@Url.Action("Details", new { id=item.Id })"><i class="fa fa-eye" aria-hidden="true"></i></a>
-                            <a class="btn btn-default" href="@Url.Action("Delete", new { id=item.Id })"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                            </div>
                         </div>
 
+                        <div class="form-group">
+                            <label><i class="fa fa-user"></i></label>
+                            <span class="">@Html.DisplayFor(modelItem => item.Profile.FirstName) @Html.DisplayFor(modelItem => item.Profile.LastName)</span>
+                        </div>
 
-                    </td>
-                </tr>
+                        <div class="form-group">
+                            <label><i class="fa fa-envelope"></i></label>
+                            <span class="">@Html.DisplayFor(modelItem => item.Email)</span>
+                        </div>
+
+                        <div class="form-group">
+                            <label><i class="fa fa-tasks"></i></label>
+                            <span class="badge badge-default">@item.Tasks.Count()</span>
+                        </div>
+                    </div>
+                </div>
+
             }
-
-        </table>
         </div>
-    </div>
-</div> 
 
+    </div>
+
+
+</div>

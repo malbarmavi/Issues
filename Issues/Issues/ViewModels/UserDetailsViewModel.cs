@@ -5,6 +5,8 @@ namespace Issues.ViewModels
 {
     public class UserDetailsViewModel
     {
+        public string Id { get; set; }
+
         public string Email { get; set; }
 
         [Display(Name = "First name")]
