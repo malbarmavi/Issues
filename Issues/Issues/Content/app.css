@@ -49,3 +49,17 @@
 .margin-bottom-15 { 
     margin-bottom:15px;
 }
+.margin-left-15 { 
+    margin-left:15px;
+}
+.font-size-8 { 
+    font-size:8pt !important;
+}
+
+.text-bold { 
+    font-weight:bold;
+}
+
+.text-underline { 
+    text-decoration:underline;
+}
