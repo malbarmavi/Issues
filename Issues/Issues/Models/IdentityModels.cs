@@ -14,7 +14,10 @@ namespace Issues.Models
         public ApplicationDbContext()
             : base("IssuesDataBae", throwIfV1Schema: false)
         {
+            Configuration.LazyLoadingEnabled = false;
+            
         }
+
 
         public static ApplicationDbContext Create()
         {
