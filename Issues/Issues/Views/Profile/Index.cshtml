@@ -1,0 +1,103 @@
+﻿@model Issues.Models.Profile
+
+@{
+    ViewBag.Title = "Profile";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<ol class="breadcrumb">
+    <li><a href="@Url.Action("Index","Home") ">Dashboard</a></li>
+    <li class="active">Profile</li>
+</ol>
+
+<div class="row">
+    <div class="col-md-3 col-sm-3"></div>
+    <div class="col-md-6 col-sm-6 col-x-12">
+        <div class="panel panel-default box-shadow">
+            <div class="panel-heading">
+                <h5 class="">
+                    &nbsp;
+                    <a href="@Url.Action("Edit")" class="pull-right"><i class="fa fa-pencil" aria-hidden="true"></i> Edit </a>
+                </h5>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.FirstName, htmlAttributes: new { @class = "control-label" })
+
+                            <span class="form-control">
+                                @Model.FirstName
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.LastName, htmlAttributes: new { @class = "control-label" })
+
+                            <span class="form-control">
+
+                                @Model.LastName
+                            </span>
+
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Address, htmlAttributes: new { @class = "control-label" })
+
+                            <span class="form-control">
+
+                                @Model.Address
+                            </span>
+
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Job, htmlAttributes: new { @class = "control-label" })
+
+                            <span class="form-control">
+
+                                @Model.Job
+                            </span>
+
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.PhoneNumber, htmlAttributes: new { @class = "control-label" })
+
+                            <span class="form-control">
+
+                                @Model.PhoneNumber
+                            </span>
+
+                        </div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Gender, htmlAttributes: new { @class = "control-label" })
+                            <span class="form-control">
+                                <label class="checkBox gender">
+                                    @Html.CheckBoxFor(model => model.Gender, htmlAttributes: new { @class = "control-label", disabled = "disabled" })
+                                </label>
+                            </span>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
