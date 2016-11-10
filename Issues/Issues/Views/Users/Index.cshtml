@@ -37,17 +37,17 @@
                         </div>
 
                         <div class="form-group">
-                            <label><i class="fa fa-user"></i></label>
+                            <label class="small display-block no-margin opacity-5"> Name </label>
                             <span class="">@Html.DisplayFor(modelItem => item.Profile.FirstName) @Html.DisplayFor(modelItem => item.Profile.LastName)</span>
                         </div>
 
                         <div class="form-group">
-                            <label><i class="fa fa-envelope"></i></label>
+                            <label class="small display-block no-margin opacity-5">Email </label>
                             <span class="">@Html.DisplayFor(modelItem => item.Email)</span>
                         </div>
 
                         <div class="form-group">
-                            <label><i class="fa fa-tasks"></i></label>
+                            <label class="small opacity-5 ">Tasks</label>
                             <span class="badge badge-default">@item.Tasks.Count()</span>
                         </div>
                     </div>

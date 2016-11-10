@@ -14,7 +14,7 @@ namespace Issues.Models
         public Profile Profile { get; set; }
 
         public Company Company { get; set; }
-
+        
         public int CompanyId { get; set; }
 
         public  List<Tasks> Tasks {get;set;}

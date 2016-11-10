@@ -7,11 +7,6 @@ namespace Issues.Models
 {
     public class Tasks
     {
-        public Tasks()
-        {
-
-        }
-
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid Id { get; set; }

@@ -1,7 +1,22 @@
-﻿body {
+﻿html {
+    height: 100%;
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
     padding-top: 60px;
-    padding-bottom: 20px;
+    padding-bottom: 75px;
     font-family: 'Gudea', sans-serif;
+    position: relative;
+    width: 100%;
+    height: auto;
+    min-height: 100%;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -27,7 +42,7 @@
 .card {
     border-radius: 2px;
     background-color: #fff;
-    padding: 10px;
+    padding: 5px 10px;
     margin-top: 10px;
 }
 
@@ -46,24 +61,45 @@
     font-size: 9pt !important;
 }
 
-.margin-bottom-15 { 
-    margin-bottom:15px;
-}
-.margin-left-15 { 
-    margin-left:15px;
-}
-.font-size-8 { 
-    font-size:8pt !important;
+.margin-bottom-15 {
+    margin-bottom: 15px;
 }
 
-.text-bold { 
-    font-weight:bold;
+.margin-left-15 {
+    margin-left: 15px;
 }
 
-.text-underline { 
-    text-decoration:underline;
+.font-size-8 {
+    font-size: 8pt !important;
 }
 
-.full-width{
-    width:100% !important;
+.text-bold {
+    font-weight: bold;
+}
+
+.text-underline {
+    text-decoration: underline;
+}
+
+.full-width {
+    width: 100% !important;
+}
+
+.no-margin {
+    margin: 0;
+}
+
+.opacity-5{
+    opacity:0.5;
+}
+footer {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    
+}
+
+footer p {
+    padding-left: 10px;
 }
