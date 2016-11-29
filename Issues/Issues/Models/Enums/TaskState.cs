@@ -1,6 +1,5 @@
 ﻿
-namespace Issues.Models
-{
+namespace Issues.Models.Enums {
     public enum TaskState : int
     {
         Undecided = 0,

@@ -11,15 +11,16 @@ using Issues.Models;
 using Issues.ViewModels;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using Issues.Models.Attributes;
 
 namespace Issues.Controllers
 {
-    [Authorize]
+    
+    [AuthorizeRoles(Roles.Admin,Roles.Manager)]
     public class UsersController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        // GET: Users
         public async Task<ActionResult> Index()
         {
             var applicationUsers = db.Users.Include(u => u.Tasks).Include(u => u.Profile);
@@ -92,8 +93,10 @@ namespace Issues.Controllers
                 };
                 var userManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(db));
                 var result = await userManager.CreateAsync(user, model.Password);
-                if (result.Succeeded)
+                if (result.Succeeded) {
+                    userManager.AddToRole(user.Id, nameof(Roles.Staff));
                     return RedirectToAction("Index");
+                }
             }
 
             return View(model);

@@ -1,4 +1,5 @@
 ﻿using Issues.Models;
+using Issues.Models.Enums;
 using System.ComponentModel.DataAnnotations;
 using System.Web.Mvc;
 
