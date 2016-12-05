@@ -94,7 +94,7 @@ namespace Issues.Controllers
                 var userManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(db));
                 var result = await userManager.CreateAsync(user, model.Password);
                 if (result.Succeeded) {
-                    userManager.AddToRole(user.Id, nameof(Roles.Staff));
+                    userManager.AddToRole(user.Id, Roles.Staff);
                     return RedirectToAction("Index");
                 }
             }

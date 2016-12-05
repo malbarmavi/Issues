@@ -15,10 +15,11 @@ namespace Issues.ViewModels
         public Guid Id { get; set; }
 
         [Required]
-        [MaxLength(150)]
+        [MaxLength(100)]
         public string Name { get; set; }
 
         [Required]
+        [MaxLength(250)]
         public string Statement { get; set; }
 
         [Timestamp]

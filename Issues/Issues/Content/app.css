@@ -25,6 +25,9 @@ body {
 /* Override the default bootstrap behavior where horizontal description lists
    will truncate terms that are too long to fit in the left column
 */
+.border, .task-state-box, .undecided-box, .inprocess-box, .test-box, .faile-box, .success-box {
+  border: 1px #e5e5e5 solid; }
+
 .dl-horizontal dt {
   white-space: normal; }
 
@@ -123,4 +126,42 @@ footer {
   color: #fff; }
   .success .card .dropdown-arrow {
     color: #fff !important; }
+
+.task-state-box, .undecided-box, .inprocess-box, .test-box, .faile-box, .success-box {
+  display: inline-block;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  text-align: center;
+  color: #fff;
+  font-size: 8pt; }
+
+.undecided-box {
+  background-color: #fff;
+  color: #2c3e50; }
+
+.inprocess-box {
+  background-color: #3498db;
+  border: #2980b9 !important; }
+
+.test-box {
+  background-color: #f1c40f;
+  border-color: #f39c12 !important; }
+
+.faile-box {
+  background-color: #e74c3c;
+  border-color: #c0392b !important; }
+
+.success-box {
+  background-color: #2ecc71;
+  border-color: #27ae60 !important; }
+
+.test, .faile, .success, .undecided, .inprocess {
+  display: none; }
+
+.show-all .test, .show-all .faile, .show-all .success, .show-all .undecided, .show-all .inprocess {
+  display: block; }
+
+.only-inprocess .inprocess {
+  display: block; }
 
