@@ -1,0 +1,179 @@
+﻿html {
+    height: 100%;
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    padding-top: 60px;
+    padding-bottom: 75px;
+    font-family: 'Gudea', sans-serif;
+    position: relative;
+    width: 100%;
+    height: auto;
+    min-height: 100%;
+    user-select: none;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists
+   will truncate terms that are too long to fit in the left column
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+
+/* validation style*/
+.input-validation-error {
+    border: 1px solid rgba(200,0,0,0.5);
+    box-shadow: 0 2px 6px rgba(255,0,0,0.3) inset;
+}
+
+
+
+
+
+.display-block {
+    display: block;
+}
+
+.nice-col-padding .col-md-4, .nice-col-padding .col-sm-6 {
+    padding-left: 5px !important;
+    padding-right: 5px !important;
+}
+
+.dropdown-arrow {
+    color: #999 !important;
+    cursor: pointer;
+    font-size: 9pt !important;
+}
+
+.margin-bottom-15 {
+    margin-bottom: 15px;
+}
+
+.margin-left-15 {
+    margin-left: 15px;
+}
+
+.font-size-8 {
+    font-size: 8pt !important;
+}
+
+
+.text-bold {
+    font-weight: bold;
+}
+
+.text-underline {
+    text-decoration: underline;
+}
+
+.full-width {
+    width: 100% !important;
+}
+
+.no-margin {
+    margin: 0;
+}
+
+.opacity-5 {
+    opacity: 0.5;
+}
+
+.opacity-8 {
+    opacity: 0.8;
+}
+
+footer {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+
+
+
+.center-it {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(50%);
+}
+
+.padding-25 {
+    padding: 25px;
+}
+
+.border-radius-2 {
+    border-radius: 2px !important;
+}
+
+
+.card {
+    border-radius: 2px;
+    background-color: #fff;
+    padding: 5px 10px;
+    margin-top: 10px;
+}
+
+.inprocess {
+    .card {
+        background-color: #3498db;
+        border-color: #2980b9 !important;
+        color: #fff;
+
+        .dropdown-arrow {
+            color: #fff !important;
+        }
+    }
+}
+
+.test {
+    .card {
+        background-color: #f1c40f;
+        border-color: #f39c12 !important;
+        color: #fff;
+
+        .dropdown-arrow {
+            color: #fff !important;
+        }
+    }
+}
+
+.faile {
+    .card {
+        background-color: #e74c3c;
+        border-color: #c0392b !important;
+        color: #fff;
+
+        .dropdown-arrow {
+            color: #fff !important;
+        }
+    }
+}
+
+
+.success {
+    .card {
+        background-color: #2ecc71;
+        border-color: #27ae60 !important;
+        color: #fff;
+
+        .dropdown-arrow {
+            color: #fff !important;
+        }
+    }
+}
