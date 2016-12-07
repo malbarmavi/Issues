@@ -5,7 +5,6 @@ span.form-control, div.form-control,.form-control {
 	box-shadow: none;
 }
 
-
 textarea {
 	resize: none;
 }
@@ -15,9 +14,9 @@ textarea {
 }
 
 .panel-default, .panel-footer, .panel-body, .panel-heading ,.panel-default>.panel-heading{
-	   
+
 	background:#fafafa;
-	
+
 }
 
 .panel-footer, .panel-body {
@@ -69,7 +68,6 @@ input.form-control {
         color: #767676 !important;
 }
 
-
 .badge-default { 
     color: #666 !important;
     background-color: #eee !important;
@@ -81,28 +79,22 @@ input.form-control {
 
 .table tr td { 
     border-bottom: 1px #e5e5e5 solid !important; 
-  
+
 }
 
 .table tr:last-child td { 
     border-bottom:none !important;
 } 
 
-
 .table th { 
     background :#FbFbFb;
      border-bottom: 1px #e5e5e5 solid !important ;
-}
-
-.box-shadow { 
-    box-shadow: 0px 1px 3px rgba(0,0,0,0.05) !important;
 }
 
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
-
 
 .table-radius { 
     border-collapse: inherit;
@@ -124,7 +116,7 @@ table {
 }
 
 .dropdown-menu {
-    
+
     border-radius: 2px !important;
     box-shadow: 0px 1px 3px rgba(0,0,0,0.05);
 }

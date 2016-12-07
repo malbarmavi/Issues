@@ -255,3 +255,5 @@ paket-files/
 *.js
 *.css
 *.map
+/Issues/Issues/Scripts/errors.json
+/Issues/Issues/Scripts/version.json

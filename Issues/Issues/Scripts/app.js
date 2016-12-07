@@ -1,7 +1,7 @@
 ﻿
 $(function () {
     $('html').niceScroll({
-        cursorcolor: "#000",
+        cursorcolor: "#666",
         cursorborder: "0px solid #fff",
         railpadding: {
             top: 0,
@@ -9,12 +9,12 @@ $(function () {
             left: 0,
             bottom: 0
         },
-        cursorwidth: "10px",
-        cursorborderradius: "0px",
-        cursoropacitymin: 0.2,
+        cursorwidth: "8px",
+        cursorborderradius: "10px",
+        cursoropacitymin: 0.8,
         cursoropacitymax: 0.8,
         boxzoom: true,
         horizrailenabled: false,
-        zindex: 9999
+        zindex: 1050
     });
 });

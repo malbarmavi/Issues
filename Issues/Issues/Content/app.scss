@@ -9,6 +9,16 @@
     box-sizing: inherit;
 }
 
+::-webkit-scrollbar {
+    width: 6px;
+    border: 1px solid transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background: #535353;
+}
+
 body {
     padding-top: 60px;
     padding-bottom: 75px;
@@ -17,7 +27,7 @@ body {
     width: 100%;
     height: auto;
     min-height: 100%;
-    user-select: none;
+    /*user-select: none;*/
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -29,24 +39,24 @@ body {
 /* Override the default bootstrap behavior where horizontal description lists
    will truncate terms that are too long to fit in the left column
 */
-.border {
-    border: 1px #e5e5e5 solid;
-}
 
 .dl-horizontal dt {
     white-space: normal;
 }
 
+.border {
+    border: 1px #e5e5e5 solid;
+}
 
-/* validation style*/
+.box-shadow {
+    box-shadow: 0px 1px 3px rgba(0,0,0,0.05) !important;
+}
+
+/* validation style */
 .input-validation-error {
     border: 1px solid rgba(200,0,0,0.5);
     box-shadow: 0 2px 6px rgba(255,0,0,0.3) inset;
 }
-
-
-
-
 
 .display-block {
     display: block;
@@ -63,18 +73,9 @@ body {
     font-size: 9pt !important;
 }
 
-.margin-bottom-15 {
-    margin-bottom: 15px;
-}
-
-.margin-left-15 {
-    margin-left: 15px;
-}
-
 .font-size-8 {
     font-size: 8pt !important;
 }
-
 
 .text-bold {
     font-weight: bold;
@@ -107,9 +108,6 @@ footer {
     left: 0;
 }
 
-
-
-
 .center-it {
     position: absolute;
     top: 50%;
@@ -125,12 +123,24 @@ footer {
     border-radius: 2px !important;
 }
 
-
 .card {
     border-radius: 2px;
     background-color: #fff;
     padding: 5px 10px;
     margin-top: 10px;
+}
+
+.card:hover, .card:focus {
+    box-shadow: 0px 3px 3px -1px rgba(0,0,0,0.1) !important;
+}
+
+.card-button i {
+    color: #999;
+    width: 20px;
+    height: 20px;
+    margin-left: 5px;
+    cursor: pointer;
+    text-align: center;
 }
 
 .inprocess {
@@ -139,7 +149,7 @@ footer {
         border-color: #2980b9 !important;
         color: #fff;
 
-        .dropdown-arrow {
+        .dropdown-arrow, .card-button {
             color: #fff !important;
         }
     }
@@ -151,7 +161,7 @@ footer {
         border-color: #f39c12 !important;
         color: #fff;
 
-        .dropdown-arrow {
+        .dropdown-arrow, .card-button {
             color: #fff !important;
         }
     }
@@ -163,12 +173,11 @@ footer {
         border-color: #c0392b !important;
         color: #fff;
 
-        .dropdown-arrow {
+        .dropdown-arrow, .card-button {
             color: #fff !important;
         }
     }
 }
-
 
 .success {
     .card {
@@ -176,64 +185,182 @@ footer {
         border-color: #27ae60 !important;
         color: #fff;
 
-        .dropdown-arrow {
+        .dropdown-arrow, .card-button {
             color: #fff !important;
         }
     }
 }
 
-$taskStateFilterBox: 28px;
+$taskStateFilterBox: 20px;
 
 .task-state-box {
     display: inline-block;
     width: $taskStateFilterBox;
     height: $taskStateFilterBox;
-    cursor:pointer;
-    text-align:center;
-    color:#fff;
-    font-size:8pt;
- @extend .border;
-   
+    cursor: pointer;
+    text-align: center;
+    color: #fff;
+    font-size: 8pt;
+    @extend .border;
 }
 
-.undecided-box{
- @extend .task-state-box;
+.undecided-box {
+    @extend .task-state-box;
     background-color: #fff;
-    color:#2c3e50;
+    border-color: #b7b7b7;
 }
+
 .inprocess-box {
     @extend .task-state-box;
     background-color: #3498db;
-    border: #2980b9 !important;
-
-}
-.test-box{
-    @extend .task-state-box;
-     background-color: #f1c40f;
-        border-color: #f39c12 !important;
-}
-.faile-box{
-    @extend .task-state-box;
-          background-color: #e74c3c;
-        border-color: #c0392b !important;
+    border-color: #2980b9 !important;
 }
 
-.success-box{
+.test-box {
     @extend .task-state-box;
-     background-color: #2ecc71;
-        border-color: #27ae60 !important;   
+    background-color: #f1c40f;
+    border-color: #f39c12 !important;
 }
-.test, .faile, .success,.undecided,.inprocess {
-    display:none;
+
+.faile-box {
+    @extend .task-state-box;
+    background-color: #e74c3c;
+    border-color: #c0392b !important;
+}
+
+.success-box {
+    @extend .task-state-box;
+    background-color: #2ecc71;
+    border-color: #27ae60 !important;
+}
+
+.all-box {
+    @extend .task-state-box;
+    background-color: #95a5a6;
+    border-color: #7f8c8d !important;
+}
+
+.test, .faile, .success, .undecided, .inprocess {
+    display: none;
 }
 
 .show-all {
-.test, .faile, .success,.undecided,.inprocess {
-    display:block;
+    .test, .faile, .success, .undecided, .inprocess {
+        display: block;
+    }
 }
-}
+
 .only-inprocess {
-    .inprocess  {
+    .inprocess {
+        display: block;
+    }
+}
+
+.animate-enter,
+.animate-leave {
+    -moz-transition: 400ms cubic-bezier(0.420, 0.000, 0.580, 1.000) all;
+    -o-transition: 400ms cubic-bezier(0.420, 0.000, 0.580, 1.000) all;
+    -webkit-transition: 400ms cubic-bezier(0.420, 0.000, 0.580, 1.000) all;
+    transition: 400ms cubic-bezier(0.420, 0.000, 0.580, 1.000) all;
+    position: relative;
+    display: block;
+}
+
+.animate-enter.animate-enter-active,
+.animate-leave {
+    opacity: 1;
+    right: 0;
+    height: 30px;
+}
+
+.animate-leave.animate-leave-active,
+.animate-enter {
+    opacity: 0;
+    right: -50px;
+    height: 0px;
+}
+
+/*
+  We're using CSS transitions for when
+  the enter and move events are triggered
+  for the element that has the .repeated-item
+  class
+*/
+.repeated-item.ng-enter, .repeated-item.ng-move {
+    transition: all 0.5s ease-in-out;
+    opacity: 0;
+}
+
+/*
+ The ng-enter-active and ng-move-active
+ are where the transition destination properties
+ are set so that the animation knows what to
+ animate.
+*/
+.repeated-item.ng-enter.ng-enter-active,
+.repeated-item.ng-move.ng-move-active {
+    opacity: 1;
+}
+
+/*
+  We're using CSS keyframe animations for when
+  the leave event is triggered for the element
+  that has the .repeated-item class
+*/
+.repeated-item.ng-leave {
+    animation: 0.5s my_animation;
+}
+
+@keyframes my_animation {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+.task-info {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 1100;
+    padding: 10%;
+    display: none;
+    transition: all 0.2s ease-in-out;
+
+    .info-box {
+        @extend .card;
+        
+        transition: all 0.4s ease-in-out;
+        padding: 20pt 10pt 10pt 10pt;
+        transform:scale(0.5);
+        opacity:0;
+        .info-close {
+            top: 10pt;
+            right: 10pt;
+            cursor: pointer;
+            opacity: 0.8;
+            transition: all 0.2s ease-out;
+
+            &:hover {
+                opacity: 1;
+                top: 8pt;
+            }
+        }
+        
+    &.show-info{
+       transform:scale(1);
+        opacity:1;
+    }
+    }
+
+    &.show-box{
         display:block;
+        
     }
 }

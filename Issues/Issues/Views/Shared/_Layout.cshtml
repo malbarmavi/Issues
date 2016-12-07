@@ -10,6 +10,7 @@
     <link href="~/Content/app.css" rel="stylesheet" />
     <link href="~/Content/bootstrap-overwrite.css" rel="stylesheet" />
     <link href="~/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/Content/builder.css" rel="stylesheet" />
     <link href="~/Content/checkbox.css" rel="stylesheet" />
 </head>
 <body>
@@ -23,7 +24,7 @@
                 </button>
 
                 <a href="@Url.Action("Index","Home")" class="navbar-brand">Issues</a>
-               
+
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
@@ -37,22 +38,25 @@
 
     <div class="container body-content">
         @RenderBody()
-        
+
     </div>
     <footer>
         <hr />
         <div class="container">
-        
-        <p>&copy; @DateTime.Now.Year - Muhammad Khair Albarmawi</p>
 
-            </div>
-        
+            <p>&copy; @DateTime.Now.Year - Muhammad Khair Albarmawi</p>
+
+        </div>
+
     </footer>
 
     <script src="~/Scripts/jquery-3.1.1.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
     <script src="~/Scripts/jquery.validate.js"></script>
     <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+    <script src="~/Scripts/app.js"></script>
+    <script src="~/Scripts/jquery.nicescroll.min.js"></script>
     @RenderSection("scripts", required: false)
+
 </body>
 </html>
