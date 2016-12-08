@@ -149,7 +149,7 @@ footer {
         border-color: #2980b9 !important;
         color: #fff;
 
-        .dropdown-arrow, .card-button {
+        .dropdown-arrow, .card-button i {
             color: #fff !important;
         }
     }
@@ -161,7 +161,7 @@ footer {
         border-color: #f39c12 !important;
         color: #fff;
 
-        .dropdown-arrow, .card-button {
+        .dropdown-arrow, .card-button  i {
             color: #fff !important;
         }
     }
@@ -173,7 +173,7 @@ footer {
         border-color: #c0392b !important;
         color: #fff;
 
-        .dropdown-arrow, .card-button {
+        .dropdown-arrow, .card-button i {
             color: #fff !important;
         }
     }
@@ -185,7 +185,7 @@ footer {
         border-color: #27ae60 !important;
         color: #fff;
 
-        .dropdown-arrow, .card-button {
+        .dropdown-arrow, .card-button i {
             color: #fff !important;
         }
     }
@@ -330,15 +330,15 @@ $taskStateFilterBox: 20px;
     background-color: rgba(0,0,0,0.5);
     z-index: 1100;
     padding: 10%;
-    display: none;
+
     transition: all 0.2s ease-in-out;
+    opacity:0;
 
     .info-box {
         @extend .card;
-        
         transition: all 0.4s ease-in-out;
         padding: 20pt 10pt 10pt 10pt;
-        transform:scale(0.5);
+        transform:scale(0.5) translateY(-100%);
         opacity:0;
         .info-close {
             top: 10pt;
@@ -354,13 +354,12 @@ $taskStateFilterBox: 20px;
         }
         
     &.show-info{
-       transform:scale(1);
+       transform:scale(1) translateY(0);
         opacity:1;
     }
     }
 
     &.show-box{
-        display:block;
-        
+        opacity:1;
     }
 }

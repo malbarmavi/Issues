@@ -119,28 +119,28 @@ footer {
   background-color: #3498db;
   border-color: #2980b9 !important;
   color: #fff; }
-  .inprocess .card .dropdown-arrow, .inprocess .task-info .info-box .dropdown-arrow, .task-info .inprocess .info-box .dropdown-arrow, .inprocess .card .card-button, .inprocess .task-info .info-box .card-button, .task-info .inprocess .info-box .card-button {
+  .inprocess .card .dropdown-arrow, .inprocess .task-info .info-box .dropdown-arrow, .task-info .inprocess .info-box .dropdown-arrow, .inprocess .card .card-button i, .inprocess .task-info .info-box .card-button i, .task-info .inprocess .info-box .card-button i {
     color: #fff !important; }
 
 .test .card, .test .task-info .info-box, .task-info .test .info-box {
   background-color: #f1c40f;
   border-color: #f39c12 !important;
   color: #fff; }
-  .test .card .dropdown-arrow, .test .task-info .info-box .dropdown-arrow, .task-info .test .info-box .dropdown-arrow, .test .card .card-button, .test .task-info .info-box .card-button, .task-info .test .info-box .card-button {
+  .test .card .dropdown-arrow, .test .task-info .info-box .dropdown-arrow, .task-info .test .info-box .dropdown-arrow, .test .card .card-button i, .test .task-info .info-box .card-button i, .task-info .test .info-box .card-button i {
     color: #fff !important; }
 
 .faile .card, .faile .task-info .info-box, .task-info .faile .info-box {
   background-color: #e74c3c;
   border-color: #c0392b !important;
   color: #fff; }
-  .faile .card .dropdown-arrow, .faile .task-info .info-box .dropdown-arrow, .task-info .faile .info-box .dropdown-arrow, .faile .card .card-button, .faile .task-info .info-box .card-button, .task-info .faile .info-box .card-button {
+  .faile .card .dropdown-arrow, .faile .task-info .info-box .dropdown-arrow, .task-info .faile .info-box .dropdown-arrow, .faile .card .card-button i, .faile .task-info .info-box .card-button i, .task-info .faile .info-box .card-button i {
     color: #fff !important; }
 
 .success .card, .success .task-info .info-box, .task-info .success .info-box {
   background-color: #2ecc71;
   border-color: #27ae60 !important;
   color: #fff; }
-  .success .card .dropdown-arrow, .success .task-info .info-box .dropdown-arrow, .task-info .success .info-box .dropdown-arrow, .success .card .card-button, .success .task-info .info-box .card-button, .task-info .success .info-box .card-button {
+  .success .card .dropdown-arrow, .success .task-info .info-box .dropdown-arrow, .task-info .success .info-box .dropdown-arrow, .success .card .card-button i, .success .task-info .info-box .card-button i, .task-info .success .info-box .card-button i {
     color: #fff !important; }
 
 .task-state-box, .undecided-box, .inprocess-box, .test-box, .faile-box, .success-box, .all-box {
@@ -249,12 +249,12 @@ footer {
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 1100;
   padding: 10%;
-  display: none;
-  transition: all 0.2s ease-in-out; }
+  transition: all 0.2s ease-in-out;
+  opacity: 0; }
   .task-info .info-box {
     transition: all 0.4s ease-in-out;
     padding: 20pt 10pt 10pt 10pt;
-    transform: scale(0.5);
+    transform: scale(0.5) translateY(-100%);
     opacity: 0; }
     .task-info .info-box .info-close {
       top: 10pt;
@@ -266,8 +266,8 @@ footer {
         opacity: 1;
         top: 8pt; }
     .task-info .info-box.show-info {
-      transform: scale(1);
+      transform: scale(1) translateY(0);
       opacity: 1; }
   .task-info.show-box {
-    display: block; }
+    opacity: 1; }
 

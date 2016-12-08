@@ -72,7 +72,7 @@
                                     <li><a class="" href="/Tasks/Delete/{{task.Id}}"><i class="fa fa-trash" aria-hidden="true"></i> Delete</a></li>
                                 </ul>
                             </div>
-                            <div class="pull-right" ng-if="task.Statement.length > 50" ng-click="infoBox.show(task.Name,task.Statement)"><i class="fa fa-eye "></i></div>
+                            <div class="pull-right card-button" ng-if="task.Statement.length > 50 || true" ng-click="infoBox.show(task.Name,task.Statement)"><i class="fa fa-eye "></i></div>
                         </div>
 
                         <div class="form-group">
@@ -97,8 +97,8 @@
             </div>
         </div>
 
-        <div class="task-info" ng-class="infoBox.showBox">
-            <div class="info-box position-relative" ng-class="infoBox.showTaskInfo">
+        <div class="task-info" ng-class="infoBox.showBox" ng-show="infoBox.showBox != ''">
+            <div class="info-box position-relative {{infoBox.task.state}}" ng-class="infoBox.showTaskInfo" >
                
                     <i class="fa fa-close fa-2x position-absolute info-close" ng-click="infoBox.hide()"></i>
                 
@@ -141,16 +141,18 @@
                 showTaskInfo:'',
                 task: {
                     name: '',
-                    statement: ''
+                    statement: '',
+                    state:''
                 },
-                show: function (n, s) {
+                show: function (name, statement,state) {
                     this.showBox = 'show-box';
                     var self = this;
                     $timeout(function () {
                         self.showTaskInfo='show-info'
                     }, 200);
-                    this.task.name = n;
-                    this.task.statement = s;
+                    this.task.name = name;
+                    this.task.statement = statement;
+                    this.task.state = state;
                 },
                 hide: function () {
                     this.showTaskInfo = '';
