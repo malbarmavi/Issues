@@ -12,58 +12,69 @@
 <div ng-app="tasks">
     <div class="" ng-controller="main">
 
-
+        
         <div class="panel panel-default box-shadow">
-            <div class="panel-heading">
+            <div class="panel-heading no-border border-raduis-4x">
                 <div class="row">
 
-                    <div class="col-md-2 col-sm-2 col-xs-12">
+                    <div class="col-md-4 col-sm-4  col-xs-6">
                         <h5>
-                            <span class="header-title">Tasks </span><span class="badge badge-default">{{tasks.length}}</span>
+                            <span class="header-title">Tasks </span><span class="badge badge-default">{{tasks.length}} / {{tasksItems.length}}</span>
+
+                            <a href="@Url.Action("Create")" class="margin-left-18"><i class="fa fa-plus" aria-hidden="true"></i> <span class="small"></span> Add</a>
+
                         </h5>
                     </div>
-                    <div class="col-md-3 col-sm-5 col-xs-12">
+
+
+                    <div class="col-md-2 pull-right text-right">
+                        <div class="btn-group border-radius-2">
+
+                        <i class="fa fa-th-large btn btn-default border " aria-hidden="true" ng-click="cardList=''"></i>
+
+                        <i class="fa fa-th-list btn btn-default border " aria-hidden="true" ng-click="cardList='card-list'"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+
+
+                    <div class="col-md-3 col-sm-6 col-xs-12">
                         <div class="form-group">
 
                             <input type="text" value="" class="form-control" ng-model="search.Name" placeholder="@Html.DisplayNameFor(m => m.Name)">
                         </div>
                     </div>
-                    <div class="col-md-3 col-sm-5 col-xs-12">
+                    <div class="col-md-4 col-sm-6 col-xs-12">
                         <div class="form-group">
 
                             <input type="text" value="" class="form-control" ng-model="search.Statement" placeholder="@Html.DisplayNameFor(m => m.Statement)">
                         </div>
                     </div>
-                    <div class="col-md-2 col-sm-6 col-xs-8">
-                        <ul class="padding-top-8 padding-left-0">
-                            <li class="all-box" ng-click="search.State = ''"></li>
-                            <li class="undecided-box" ng-click="search.State = 'Undecided'"></li>
-                            <li class="inprocess-box" ng-click="search.State = 'InProcess'"></li>
-                            <li class="test-box" ng-click="search.State = 'Test'"></li>
-                            <li class="faile-box" ng-click="search.State = 'Faile'"></li>
-                            <li class="success-box" ng-click="search.State = 'Success'"></li>
+                    <div class="col-md-5 col-sm-12 col-xs-12 text-center">
+                        <ul class="padding-top-4 padding-left-0 btn-group">
+                            <li class="btn all-box" ng-click="search.State = ''">ِAll</li>
+                            <li class="btn undecided-box" ng-click="search.State = 'Undecided'">Undecided</li>
+                            <li class="btn inprocess-box" ng-click="search.State = 'InProcess'">InProcess</li>
+                            <li class="btn test-box" ng-click="search.State = 'Test'">Test</li>
+                            <li class="btn faile-box" ng-click="search.State = 'Faile'">Faile</li>
+                            <li class="btn success-box" ng-click="search.State = 'Success'">Success</li>
                         </ul>
                     </div>
-                    <div class="col-md-2 col-sm-6 col-xs-4">
-                        <h5>
-                            <a href="@Url.Action("Create")" class="pull-right"><i class="fa fa-plus" aria-hidden="true"></i>  Add task </a>
-                        </h5>
-                    </div>
-                </div>
-                <div class="row">
-
-
 
                 </div>
+          
             </div>
         </div>
 
-        <div class="nice-col-padding ">
+        <div class="nice-col-padding " ng-class="cardList">
             <div class="show-all" id="taskHolder">
+                
 
-                <div ng-repeat="task in tasks  | filter:search" class="col-md-4 col-sm-6 col-xs-12 {{task.State}} pull-left repeated-item">
+                <div ng-repeat="task in tasksItems = (tasks  | filter:search)" class="col-md-4 col-sm-6 col-xs-12 {{task.State}} pull-left repeated-item">
                     <div class="border card ">
-                        <div class="text-right margin-bottom-15 card-button">
+                        <div class="text-right margin-bottom-15">
                             <div class="dropdown pull-right">
                                 <i class="fa fa-chevron-down dropdown-toggle dropdown-arrow" id="control-menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"></i>
                                 <ul class="dropdown-menu" aria-labelledby="control-menu">
@@ -97,11 +108,11 @@
             </div>
         </div>
 
-        <div class="task-info" ng-class="infoBox.showBox" ng-show="infoBox.showBox != ''">
-            <div class="info-box position-relative {{infoBox.task.state}}" ng-class="infoBox.showTaskInfo" >
-               
-                    <i class="fa fa-close fa-2x position-absolute info-close" ng-click="infoBox.hide()"></i>
-                
+        <div class="task-info" ng-class="infoBox.showBox" ng-show="infoBox.showBox != ''" ng-click="infoBox.hide()">
+            <div class="info-box position-relative {{infoBox.task.state}}" ng-class="infoBox.showTaskInfo" ng-click="$event.stopPropagation();">
+
+                <i class="fa fa-close position-absolute info-close" ng-click="infoBox.hide()"></i>
+
                 <div class="form-group">
                     <h3 class="display-block no-margin text-bold"> @Html.DisplayNameFor(m => m.Name) </h3>
                     <h4 class="">{{infoBox.task.name}}</h4>
@@ -112,7 +123,7 @@
                     <h4 class="">{{infoBox.task.statement}}</h4>
                 </div>
             </div>
-        </div>    
+        </div>
 
     </div>
 </div>
@@ -134,21 +145,19 @@
                 console.log(responde); console.log('error');
             });
 
-
-
             var infoBox = {
                 showBox: '',
-                showTaskInfo:'',
+                showTaskInfo: '',
                 task: {
                     name: '',
                     statement: '',
-                    state:''
+                    state: ''
                 },
-                show: function (name, statement,state) {
+                show: function (name, statement, state) {
                     this.showBox = 'show-box';
                     var self = this;
                     $timeout(function () {
-                        self.showTaskInfo='show-info'
+                        self.showTaskInfo = 'show-info'
                     }, 200);
                     this.task.name = name;
                     this.task.statement = statement;
@@ -162,9 +171,10 @@
                     }, 200);
                 }
             };
-            
+
             $scope.infoBox = infoBox;
-           
+            $scope.cardList = '';
+
         }]);
 
     </script>
