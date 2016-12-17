@@ -17,24 +17,16 @@
             <div class="panel-heading no-border border-raduis-4x">
                 <div class="row">
 
-                    <div class="col-md-4 col-sm-4  col-xs-6">
-                        <h5>
-                            <span class="header-title">Tasks </span><span class="badge badge-default">{{tasks.length}} / {{tasksItems.length}}</span>
+                    <div class="col-md-12">
+                        <h5 class="text-right">
 
-                            <a href="@Url.Action("Create")" class="margin-left-18"><i class="fa fa-plus" aria-hidden="true"></i> <span class="small"></span> Add</a>
+                            <a href="@Url.Action("Create")" class=""><i class="fa fa-plus" aria-hidden="true"></i> <span class="small"></span> Add</a>
 
                         </h5>
                     </div>
 
 
-                    <div class="col-md-2 pull-right text-right">
-                        <div class="btn-group border-radius-2">
-
-                        <i class="fa fa-th-large btn btn-default border " aria-hidden="true" ng-click="cardList=''"></i>
-
-                        <i class="fa fa-th-list btn btn-default border " aria-hidden="true" ng-click="cardList='card-list'"></i>
-                        </div>
-                    </div>
+               
                 </div>
 
                 <div class="row">
@@ -70,7 +62,18 @@
 
         <div class="nice-col-padding " ng-class="cardList">
             <div class="show-all" id="taskHolder">
-                
+                <h5 class="text-left">
+                    {{tasks.length}} tasks in total that targeting you <span ng-if="tasks.length !== tasksItems.length">and {{tasksItems.length}} base by current filter.</span>
+
+                    <span class="pull-right text-right">
+                        <span class="btn-group border-radius-2">
+
+                            <i class="fa fa-th-large btn btn-default border " aria-hidden="true" ng-click="cardList=''"></i>
+
+                            <i class="fa fa-th-list btn btn-default border " aria-hidden="true" ng-click="cardList='card-list'"></i>
+                        </span>
+                    </span>
+                </h5>
 
                 <div ng-repeat="task in tasksItems = (tasks  | filter:search)" class="col-md-4 col-sm-6 col-xs-12 {{task.State}} pull-left repeated-item">
                     <div class="border card ">
@@ -104,6 +107,10 @@
                     </div>
                 </div>
 
+
+                <h3 class="text-center margin-top-50" ng-if="tasks.length === 0 ">
+                     There is no tasks has bee found.
+                </h3>
 
             </div>
         </div>
