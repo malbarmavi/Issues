@@ -1,8 +1,8 @@
 ﻿@model IEnumerable<Issues.Models.Tasks>
 
 @{
-    ViewBag.Title = "Tasks";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+  ViewBag.Title = "Tasks";
+  Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <ol class="breadcrumb">
@@ -12,7 +12,7 @@
 <div ng-app="tasks">
     <div class="" ng-controller="main">
 
-        
+
         <div class="panel panel-default box-shadow">
             <div class="panel-heading no-border border-raduis-4x">
                 <div class="row">
@@ -26,7 +26,7 @@
                     </div>
 
 
-               
+
                 </div>
 
                 <div class="row">
@@ -38,13 +38,13 @@
                             <input type="text" value="" class="form-control" ng-model="search.Name" placeholder="@Html.DisplayNameFor(m => m.Name)">
                         </div>
                     </div>
-                    <div class="col-md-4 col-sm-6 col-xs-12">
+                    <div class="col-md-3 col-sm-6 col-xs-12">
                         <div class="form-group">
 
                             <input type="text" value="" class="form-control" ng-model="search.Statement" placeholder="@Html.DisplayNameFor(m => m.Statement)">
                         </div>
                     </div>
-                    <div class="col-md-5 col-sm-12 col-xs-12 text-center">
+                    <div class="col-md-6 col-sm-12 col-xs-12 text-center">
                         <ul class="padding-top-4 padding-left-0 btn-group">
                             <li class="btn all-box" ng-click="search.State = ''">ِAll</li>
                             <li class="btn undecided-box" ng-click="search.State = 'Undecided'">Undecided</li>
@@ -56,7 +56,7 @@
                     </div>
 
                 </div>
-          
+
             </div>
         </div>
 
@@ -109,7 +109,7 @@
 
 
                 <h3 class="text-center margin-top-50" ng-if="tasks.length === 0 ">
-                     There is no tasks has bee found.
+                    There is no tasks has bee found.
                 </h3>
 
             </div>
