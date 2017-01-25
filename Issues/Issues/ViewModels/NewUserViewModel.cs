@@ -30,8 +30,8 @@ namespace Issues.ViewModels
         [Display(Name = "Last name")]
         public string LastName { get; set; }
 
-        [Required]
-        public bool Gender { get; set; }
+    [Required]
+    public bool Gender { get; set; } 
 
         [Required]
         [MaxLength(150)]

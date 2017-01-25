@@ -23,8 +23,9 @@ namespace Issues.ViewModels
         [Required]
         public TaskState State { get; set; }
 
+        [Display(Name = "Users")]
         public string[] UsersId { get; set; }
-
+        
         public SelectList UserList { get; set; }
 
     }
