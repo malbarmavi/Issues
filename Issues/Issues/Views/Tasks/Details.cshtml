@@ -1,67 +1,112 @@
 ﻿@model Issues.Models.Tasks
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Tasks - Details";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Details</h2>
+<ol class="breadcrumb">
+    <li><a href="@Url.Action("Index","Home") ">Dashboard</a></li>
+    <li><a href="@Url.Action("Index","Tasks")">Users</a></li>
+    <li class="active"> </li>
+</ol>
 
-<div>
-    <h4>Tasks</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
+<div class="row">
+    <div class="col-md-3 col-sm-3"></div>
+    <div class="col-md-6 col-sm-6 col-x-12">
+        <div class="panel panel-default box-shadow">
+            <div class="panel-heading">
+                <h5 class="">
+                    &nbsp;
+                    <a href="@Url.Action("Delete", new { id=Model.Id})" class="pull-right margin-left-15"><i class="fa fa-trash" aria-hidden="true"></i> Delete</a>
+                    <a href="@Url.Action("Edit",new { id = Model.Id })" class="pull-right"><i class="fa fa-pencil" aria-hidden="true"></i> Edit </a>
+                </h5>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label " })
 
-        <dd>
-            @Html.DisplayFor(model => model.Name)
-        </dd>
+                            <span class="form-control">
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Statement)
-        </dt>
+                                @Model.Name
+                            </span>
 
-        <dd>
-            @Html.DisplayFor(model => model.Statement)
-        </dd>
+                        </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Version)
-        </dt>
+                    </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.Version)
-        </dd>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Statement, htmlAttributes: new { @class = "control-label " })
 
-        <dt>
-            @Html.DisplayNameFor(model => model.State)
-        </dt>
+                            <span class="form-control">
 
-        <dd>
-            @Html.DisplayFor(model => model.State)
-        </dd>
+                                @Model.Statement
+                            </span>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.DateOfCreate)
-        </dt>
+                        </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.DateOfCreate)
-        </dd>
+                    </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.DateOfUpdate)
-        </dt>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.State, htmlAttributes: new { @class = "control-label " })
 
-        <dd>
-            @Html.DisplayFor(model => model.DateOfUpdate)
-        </dd>
+                            <span class="form-control">
 
-    </dl>
+                                @Model.State
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.DateOfCreate, htmlAttributes: new { @class = "control-label " })
+
+                            <span class="form-control">
+
+                                @Model.DateOfCreate
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.DateOfUpdate, htmlAttributes: new { @class = "control-label " })
+
+                            <span class="form-control">
+
+                                @Model.DateOfUpdate
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Users, htmlAttributes: new { @class = "control-label " })
+
+                            <span >
+
+                                <b class="badge">@Model.Users.Count()</b> 
+                            </span>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
+
+    <a href="@Url.Action("Index")"><i class="fa fa-chevron-left font-size-8" aria-hidden="true"></i> Back to List</a>
 </p>

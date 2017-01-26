@@ -19,6 +19,8 @@ namespace Issues.Controllers {
             return View(await db.Tasks.Include(t => t.Users).ToListAsync());
         }
 
+
+        // Get list of user for angular http.get
         public ActionResult TasksList() {
             return Json(db.Tasks.Include(t => t.Users)
                 .Select(
@@ -32,11 +34,11 @@ namespace Issues.Controllers {
                 , JsonRequestBehavior.AllowGet);
         }
 
-        public async Task<ActionResult> Details(int? id) {
+        public async Task<ActionResult> Details(Guid? id) {
             if (id == null) {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Tasks tasks = await db.Tasks.FindAsync(id);
+            Tasks tasks = await db.Tasks.Include(u => u.Users).SingleAsync(t=> t.Id == id);
             if (tasks == null) {
                 return HttpNotFound();
             }
