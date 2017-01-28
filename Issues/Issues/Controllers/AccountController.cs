@@ -142,7 +142,12 @@ namespace Issues.Controllers
         [AllowAnonymous]
         public ActionResult Register()
         {
-            return View();
+          
+          if (User.Identity.GetUserId() != null)
+          {
+             return RedirectToAction("Index","Home");
+          }
+          return View();
         }
 
         //
@@ -152,7 +157,11 @@ namespace Issues.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Register(RegisterViewModel model)
         {
-            if (ModelState.IsValid)
+          if (User.Identity.GetUserId() != null)
+          {
+            return RedirectToAction("Index", "Home");
+      }
+          if (ModelState.IsValid)
             {
 
               
