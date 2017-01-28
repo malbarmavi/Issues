@@ -21,7 +21,7 @@
 
 body {
     padding-top: 60px;
-    padding-bottom: 75px;
+    padding-bottom: 85px;
     font-family: 'Gudea', sans-serif;
     position: relative;
     width: 100%;
@@ -102,10 +102,17 @@ body {
 }
 
 footer {
+    border-top: 1px solid #eee;
     position: absolute;
     right: 0;
     bottom: 0;
     left: 0;
+    padding: 10pt 0 5pt 0;
+
+    .fa {
+        font-size: 12pt;
+        margin: 0 2pt;
+    }
 }
 
 .center-it {
@@ -195,20 +202,17 @@ $taskStateFilterBox: 20px;
 
 .task-state-box {
     display: inline-block;
-   
     cursor: pointer;
     text-align: center;
     min-width: 65px;
-    
     font-size: 8pt;
     @extend .border;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.35);
-    z-index:2;
-       &:hover {
-         color:#fff;
-        
+    z-index: 2;
+
+    &:hover {
+        color: #fff;
     }
-  
 }
 
 .undecided-box {
@@ -216,9 +220,9 @@ $taskStateFilterBox: 20px;
     background-color: #fff;
     border-color: #b7b7b7;
     text-shadow: 1px 1px 2px rgba(199, 199, 199, 0.35);
-           &:hover {
-         color:currentColor;
-        
+
+    &:hover {
+        color: currentColor;
     }
 }
 
@@ -226,40 +230,35 @@ $taskStateFilterBox: 20px;
     @extend .task-state-box;
     background-color: #3498db;
     border-color: #2980b9 !important;
-    color:#fff;
-    
+    color: #fff;
 }
 
 .test-box {
     @extend .task-state-box;
     background-color: #f1c40f;
     border-color: #f39c12 !important;
-    color:#fff;
-
+    color: #fff;
 }
 
 .faile-box {
     @extend .task-state-box;
     background-color: #e74c3c;
     border-color: #c0392b !important;
-    color:#fff;
-
+    color: #fff;
 }
 
 .success-box {
     @extend .task-state-box;
     background-color: #2ecc71;
     border-color: #27ae60 !important;
-    color:#fff;
-
+    color: #fff;
 }
 
 .all-box {
     @extend .task-state-box;
     background-color: #95a5a6;
     border-color: #7f8c8d !important;
-    color:#fff;
-
+    color: #fff;
 }
 
 .test, .faile, .success, .undecided, .inprocess {
@@ -384,8 +383,8 @@ $taskStateFilterBox: 20px;
 }
 
 
-.card-list { 
-    .col-md-4 , .col-sm-6 , .col-xs-12{
-        width:100%;
+.card-list {
+    .col-md-4, .col-sm-6, .col-xs-12 {
+        width: 100%;
     }
 }
