@@ -213,7 +213,7 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Profile.cs" />
-    <Compile Include="Models\Task.cs" />
+    <Compile Include="Models\Tasks.cs" />
     <Compile Include="Models\Enums\TaskState.cs" />
     <Compile Include="Models\UsersList.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
