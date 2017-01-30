@@ -11,6 +11,8 @@ namespace Issues.Models
 
         public DbSet<Tasks> Tasks { get; set; }
 
+        public DbSet<Project> Projects { get; set; }
+
         public ApplicationDbContext()
             : base("IssuesDataBae", throwIfV1Schema: false)
         {
