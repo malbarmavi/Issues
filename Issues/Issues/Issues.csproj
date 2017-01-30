@@ -204,6 +204,10 @@
     <Compile Include="Migrations\201611290643261_UpdateTaskStatemntAndNameTextLength.Designer.cs">
       <DependentUpon>201611290643261_UpdateTaskStatemntAndNameTextLength.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201701300539479_AddProjectModel.cs" />
+    <Compile Include="Migrations\201701300539479_AddProjectModel.Designer.cs">
+      <DependentUpon>201701300539479_AddProjectModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
@@ -1141,6 +1145,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201611290643261_UpdateTaskStatemntAndNameTextLength.resx">
       <DependentUpon>201611290643261_UpdateTaskStatemntAndNameTextLength.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701300539479_AddProjectModel.resx">
+      <DependentUpon>201701300539479_AddProjectModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
