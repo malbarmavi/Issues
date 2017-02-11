@@ -15,7 +15,8 @@ textarea {
 
 .panel-default, .panel-footer, .panel-body, .panel-heading ,.panel-default>.panel-heading{
 
-	background:#fafafa;
+	/*background:#fafafa;*/
+    background:#fff;
 
 }
 
