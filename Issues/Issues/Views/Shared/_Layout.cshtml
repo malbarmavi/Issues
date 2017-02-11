@@ -6,13 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title</title>
     <link href="https://fonts.googleapis.com/css?family=Gudea:400,400i,700" rel="stylesheet">
-    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
-    <link href="~/Content/app.css" rel="stylesheet" />
-    <link href="~/Content/bootstrap-overwrite.css" rel="stylesheet" />
-    <link href="~/css/font-awesome.min.css" rel="stylesheet" />
-    <link href="~/Content/builder.css" rel="stylesheet" />
-    <link href="~/Content/checkbox.css" rel="stylesheet" />
-    <link href="~/Content/chosen.css" rel="stylesheet" />
+    
+    <link href="@Utility.GetBuildUrl("/Content/bootstrap.min.css")" rel="stylesheet" />
+    <link href="@Utility.GetBuildUrl("/Content/app.css")" rel="stylesheet" />
+    <link href="@Utility.GetBuildUrl("/Content/bootstrap-overwrite.css")" rel="stylesheet" />
+    <link href="@Utility.GetBuildUrl("/css/font-awesome.min.css")" rel="stylesheet" />
+    <link href="@Utility.GetBuildUrl("/Content/builder.css")" rel="stylesheet" />
+    <link href="@Utility.GetBuildUrl("/Content/checkbox.css")" rel="stylesheet" />
+    <link href="@Utility.GetBuildUrl("/Content/chosen.css")" rel="stylesheet" />
+
     @RenderSection("style", required: false)
 </head>
 <body>
@@ -61,13 +63,13 @@
 
     </footer>
 
-    <script src="~/Scripts/jquery-3.1.1.min.js"></script>
-    <script src="~/Scripts/bootstrap.min.js"></script>
-    <script src="~/Scripts/jquery.validate.js"></script>
-    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
-    <script src="~/Scripts/jquery.nicescroll.min.js"></script>
-    <script src="~/Scripts/chosen.jquery.min.js"></script>
-    <script src="~/Scripts/app.js"></script>
+    <script src="@Utility.GetBuildUrl("/Scripts/jquery-3.1.1.min.js")"></script>
+    <script src="@Utility.GetBuildUrl("/Scripts/bootstrap.min.js")"></script>
+    <script src="@Utility.GetBuildUrl("/Scripts/jquery.validate.js")"></script>
+    <script src="@Utility.GetBuildUrl("/Scripts/jquery.validate.unobtrusive.js")"></script>
+    <script src="@Utility.GetBuildUrl("/Scripts/jquery.nicescroll.min.js")"></script>
+    <script src="@Utility.GetBuildUrl("/Scripts/chosen.jquery.min.js")"></script>
+    <script src="@Utility.GetBuildUrl("/Scripts/app.js")"></script>
     @RenderSection("scripts", required: false)
 
 </body>

@@ -12,7 +12,7 @@ namespace Issues {
         /// </summary>
         /// <param name="url">Url Address</param>
         /// <returns>Url with build number</returns>
-        public static string UrlBuilder(string url) => $"{url}?v={AppSetting.Build}";
-
+        public static string GetBuildUrl(string url) => $"{url}?v={AppSetting.Build}";
+       
     }
 }
