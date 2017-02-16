@@ -7,13 +7,13 @@ namespace Issues.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class AddTaskModel : IMigrationMetadata
+    public sealed partial class initial : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AddTaskModel));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(initial));
         
         string IMigrationMetadata.Id
         {
-            get { return "201611021757045_AddTaskModel"; }
+            get { return "201702162351169_initial"; }
         }
         
         string IMigrationMetadata.Source

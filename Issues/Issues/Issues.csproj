@@ -181,37 +181,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201610280800460_initial.cs" />
-    <Compile Include="Migrations\201610280800460_initial.Designer.cs">
-      <DependentUpon>201610280800460_initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201610281759512_AddCompanyModel.cs" />
-    <Compile Include="Migrations\201610281759512_AddCompanyModel.Designer.cs">
-      <DependentUpon>201610281759512_AddCompanyModel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201610290933389_FixUserProfile.cs" />
-    <Compile Include="Migrations\201610290933389_FixUserProfile.Designer.cs">
-      <DependentUpon>201610290933389_FixUserProfile.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201610300856229_AddPhoneNumberToProfile.cs" />
-    <Compile Include="Migrations\201610300856229_AddPhoneNumberToProfile.Designer.cs">
-      <DependentUpon>201610300856229_AddPhoneNumberToProfile.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201611021757045_AddTaskModel.cs" />
-    <Compile Include="Migrations\201611021757045_AddTaskModel.Designer.cs">
-      <DependentUpon>201611021757045_AddTaskModel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201611290643261_UpdateTaskStatemntAndNameTextLength.cs" />
-    <Compile Include="Migrations\201611290643261_UpdateTaskStatemntAndNameTextLength.Designer.cs">
-      <DependentUpon>201611290643261_UpdateTaskStatemntAndNameTextLength.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201702161808171_AddProjectModel.cs" />
-    <Compile Include="Migrations\201702161808171_AddProjectModel.Designer.cs">
-      <DependentUpon>201702161808171_AddProjectModel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201702162336511_ChangeTaskModeIdTypeToInt.cs" />
-    <Compile Include="Migrations\201702162336511_ChangeTaskModeIdTypeToInt.Designer.cs">
-      <DependentUpon>201702162336511_ChangeTaskModeIdTypeToInt.cs</DependentUpon>
+    <Compile Include="Migrations\201702162351169_initial.cs" />
+    <Compile Include="Migrations\201702162351169_initial.Designer.cs">
+      <DependentUpon>201702162351169_initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -1139,36 +1111,15 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201610280800460_initial.resx">
-      <DependentUpon>201610280800460_initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201610281759512_AddCompanyModel.resx">
-      <DependentUpon>201610281759512_AddCompanyModel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201610290933389_FixUserProfile.resx">
-      <DependentUpon>201610290933389_FixUserProfile.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201610300856229_AddPhoneNumberToProfile.resx">
-      <DependentUpon>201610300856229_AddPhoneNumberToProfile.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201611021757045_AddTaskModel.resx">
-      <DependentUpon>201611021757045_AddTaskModel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201611290643261_UpdateTaskStatemntAndNameTextLength.resx">
-      <DependentUpon>201611290643261_UpdateTaskStatemntAndNameTextLength.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702161808171_AddProjectModel.resx">
-      <DependentUpon>201702161808171_AddProjectModel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702162336511_ChangeTaskModeIdTypeToInt.resx">
-      <DependentUpon>201702162336511_ChangeTaskModeIdTypeToInt.cs</DependentUpon>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Scripts\jquery-3.1.1.slim.min.map" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Scripts\jquery-3.1.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201702162351169_initial.resx">
+      <DependentUpon>201702162351169_initial.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
