@@ -12,7 +12,7 @@ namespace Issues.ViewModels
     public class EditTaskViewMode
     {
         [Required]
-        public Guid Id { get; set; }
+        public int Id { get; set; }
 
         [Required]
         [MaxLength(100)]

@@ -34,7 +34,7 @@ namespace Issues.Controllers {
                 , JsonRequestBehavior.AllowGet);
         }
 
-        public async Task<ActionResult> Details(Guid? id) {
+        public async Task<ActionResult> Details(int? id) {
             if (id == null) {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
@@ -86,7 +86,7 @@ namespace Issues.Controllers {
         }
 
         [HttpGet]
-        public async Task<ActionResult> Edit(Guid? id) {
+        public async Task<ActionResult> Edit(int? id) {
             if (id == null) {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
@@ -139,7 +139,7 @@ namespace Issues.Controllers {
         }
 
         [HttpGet]
-        public async Task<ActionResult> Delete(Guid? id) {
+        public async Task<ActionResult> Delete(int? id) {
             if (id == null) {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
@@ -152,7 +152,7 @@ namespace Issues.Controllers {
 
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> DeleteConfirmed(Guid? id) {
+        public async Task<ActionResult> DeleteConfirmed(int? id) {
             if (id == null) {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }

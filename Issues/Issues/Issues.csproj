@@ -209,6 +209,10 @@
     <Compile Include="Migrations\201702161808171_AddProjectModel.Designer.cs">
       <DependentUpon>201702161808171_AddProjectModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201702162336511_ChangeTaskModeIdTypeToInt.cs" />
+    <Compile Include="Migrations\201702162336511_ChangeTaskModeIdTypeToInt.Designer.cs">
+      <DependentUpon>201702162336511_ChangeTaskModeIdTypeToInt.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
@@ -1155,6 +1159,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201702161808171_AddProjectModel.resx">
       <DependentUpon>201702161808171_AddProjectModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702162336511_ChangeTaskModeIdTypeToInt.resx">
+      <DependentUpon>201702162336511_ChangeTaskModeIdTypeToInt.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
