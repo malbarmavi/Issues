@@ -53,7 +53,6 @@ namespace Issues.Controllers
         {
             if (ModelState.IsValid)
             {
-                project.Id = Guid.NewGuid();
                 db.Projects.Add(project);
                 await db.SaveChangesAsync();
                 return RedirectToAction("Index");
@@ -64,7 +63,7 @@ namespace Issues.Controllers
         }
 
         // GET: Projects/Edit/5
-        public async Task<ActionResult> Edit(Guid? id)
+        public async Task<ActionResult> Edit(int? id)
         {
             if (id == null)
             {
@@ -114,8 +113,9 @@ namespace Issues.Controllers
         // POST: Projects/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> DeleteConfirmed(Guid id)
+        public async Task<ActionResult> DeleteConfirmed(int? id)
         {
+            //TODO Add null check
             Project project = await db.Projects.FindAsync(id);
             db.Projects.Remove(project);
             await db.SaveChangesAsync();

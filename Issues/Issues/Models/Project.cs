@@ -6,12 +6,12 @@ using System.Linq;
 using System.Web;
 
 namespace Issues.Models
+
 {
   public class Project
   {
     [Key]
-    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-    public Guid Id { get; set; }
+    public int Id { get; set; }
 
     [Required]
     [MaxLength(100)]

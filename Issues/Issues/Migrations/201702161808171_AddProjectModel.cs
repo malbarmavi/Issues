@@ -11,7 +11,7 @@ namespace Issues.Migrations
                 "dbo.Projects",
                 c => new
                     {
-                        Id = c.Guid(nullable: false, identity: true),
+                        Id = c.Int(nullable: false, identity: true),
                         Name = c.String(nullable: false, maxLength: 100),
                         Description = c.String(nullable: false, maxLength: 250),
                         Version = c.Binary(nullable: false, fixedLength: true, timestamp: true, storeType: "rowversion"),
@@ -23,7 +23,7 @@ namespace Issues.Migrations
                 .ForeignKey("dbo.Companies", t => t.CompanyId, cascadeDelete: true)
                 .Index(t => t.CompanyId);
             
-            AddColumn("dbo.Tasks", "Project_Id", c => c.Guid());
+            AddColumn("dbo.Tasks", "Project_Id", c => c.Int());
             CreateIndex("dbo.Tasks", "Project_Id");
             AddForeignKey("dbo.Tasks", "Project_Id", "dbo.Projects", "Id");
         }
