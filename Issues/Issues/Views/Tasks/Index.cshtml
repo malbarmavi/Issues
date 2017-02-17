@@ -12,7 +12,6 @@
 <div ng-app="tasks">
     <div class="" ng-controller="main">
 
-
         <div class="panel panel-default box-shadow">
             <div class="panel-heading no-border border-raduis-4x">
                 <div class="row">
@@ -21,16 +20,11 @@
                         <h5 class="text-right">
 
                             <a href="@Url.Action("Create")" class=""><i class="fa fa-plus" aria-hidden="true"></i> <span class="small"></span> Add</a>
-
                         </h5>
                     </div>
-
-
-
                 </div>
 
                 <div class="row">
-
 
                     <div class="col-md-3 col-sm-6 col-xs-12">
                         <div class="form-group">
@@ -54,9 +48,7 @@
                             <li class="btn success-box" ng-click="search.State = 'Success'">Success</li>
                         </ul>
                     </div>
-
                 </div>
-
             </div>
         </div>
 
@@ -103,15 +95,12 @@
                             <label class="small opacity-8 ">@Html.DisplayNameFor(m => m.Users)</label>
                             <span class="badge badge-default">{{task.Users}}</span>
                         </div>
-
                     </div>
                 </div>
-
 
                 <h3 class="text-center margin-top-50" ng-if="tasks.length === 0 ">
                     There is no tasks has bee found.
                 </h3>
-
             </div>
         </div>
 
@@ -131,10 +120,8 @@
                 </div>
             </div>
         </div>
-
     </div>
 </div>
-
 
 @section scripts {
     <style>
@@ -183,6 +170,5 @@
             $scope.cardList = '';
 
         }]);
-
     </script>
 }

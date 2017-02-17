@@ -1,22 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 
 namespace Issues.Controllers
 {
-    public class ErrorController : Controller
+  public class ErrorController : Controller
+  {
+    public ActionResult Index()
     {
-      
-        public ActionResult Index()
-        {
-            return RedirectToAction("Index","Home");
-        }
-
-        public ActionResult AccessDenied() {
-
-            return View();
-        }
+      return RedirectToAction("Index", "Home");
     }
+
+    public ActionResult AccessDenied()
+    {
+      return View();
+    }
+  }
 }

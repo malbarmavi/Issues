@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title</title>
     <link href="https://fonts.googleapis.com/css?family=Gudea:400,400i,700" rel="stylesheet">
-    
+
     <link href="@Utility.GetBuildUrl("/Content/bootstrap.min.css")" rel="stylesheet" />
     <link href="@Utility.GetBuildUrl("/Content/app.css")" rel="stylesheet" />
     <link href="@Utility.GetBuildUrl("/Content/bootstrap-overwrite.css")" rel="stylesheet" />
@@ -28,7 +28,6 @@
                 </button>
 
                 <a href="@Url.Action("Index","Home")" class="navbar-brand">Issues</a>
-
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
@@ -43,24 +42,19 @@
 
     <div class="container body-content">
         @RenderBody()
-
     </div>
     <footer>
-  
+
         <div class="container text-center ">
 
             <p>&copy; @DateTime.Now.Year - Muhammad Khair Albarmawi</p>
-
-       
 
             <div class="text-center">
                 <span><a target="_blank" href="https://www.linkedin.com/in/mbarmawi" class="linkedin"><i class="fa fa-linkedin fa-2x" aria-hidden="true"></i></a>  </span>
                 <span><a target="_blank" href="http://github.com/mbarmawi/" class="git"><i class="fa fa-github fa-2x" aria-hidden="true"></i></a>                  </span>
                 <span><a target="_blank" href="http://codepen.io/mbarmawi/" class="codepen"><i class="fa fa-codepen fa-2x" aria-hidden="true"></i></a>             </span>
             </div>
-
         </div>
-
     </footer>
 
     <script src="@Utility.GetBuildUrl("/Scripts/jquery-3.1.1.min.js")"></script>
@@ -71,6 +65,5 @@
     <script src="@Utility.GetBuildUrl("/Scripts/chosen.jquery.min.js")"></script>
     <script src="@Utility.GetBuildUrl("/Scripts/app.js")"></script>
     @RenderSection("scripts", required: false)
-
 </body>
 </html>

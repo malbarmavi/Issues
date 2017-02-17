@@ -7,7 +7,6 @@
 @section style {
     <style>
 
-
 input,
 button {
   outline: none !important;
@@ -18,7 +17,6 @@ button,
 .panel {
   border-radius: 2px !important;
 }
-
 
 /* input icon */
 
@@ -50,14 +48,13 @@ button,
 label {
   font-weight:normal !important;
 }
-    .panel-body { 
+    .panel-body {
         background:#fff !important
     }
     </style>
 }
 
 <div class="row">
-
 
     @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" })) {
         @Html.AntiForgeryToken()
@@ -86,11 +83,9 @@ label {
                                 </div>
                             </div>
                         </div>
-            
                     </div>
                     <div class="panel-footer">
                         <input type="submit" value="Log in" class="btn btn-success btn-block" />
-
                     </div>
                 </div>
                     <p class="text-center">
@@ -100,8 +95,4 @@ label {
             <div class="col-md-4 col-sm-2 "></div>
 
     }
-
 </div>
-
-
-

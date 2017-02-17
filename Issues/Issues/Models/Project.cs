@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Web;
 
 namespace Issues.Models
 
@@ -33,7 +30,5 @@ namespace Issues.Models
     public Company Company { get; set; }
 
     public int CompanyId { get; set; }
-
-
   }
 }

@@ -3,12 +3,12 @@ using System.Web.Routing;
 
 namespace Issues
 {
-    public class MvcApplication : System.Web.HttpApplication
+  public class MvcApplication : System.Web.HttpApplication
+  {
+    protected void Application_Start()
     {
-        protected void Application_Start()
-        {
-            AreaRegistration.RegisterAllAreas();
-            RouteConfig.RegisterRoutes(RouteTable.Routes);
-        }
+      AreaRegistration.RegisterAllAreas();
+      RouteConfig.RegisterRoutes(RouteTable.Routes);
     }
+  }
 }

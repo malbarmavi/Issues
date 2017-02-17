@@ -11,7 +11,6 @@
     <li class="active">Create</li>
 </ol>
 
-
 @using (Html.BeginForm()) {
 @Html.AntiForgeryToken()
 
@@ -26,10 +25,8 @@
                     <div class="col-md-12">
                         <div class="form-group">
                             @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label" })
-                         
+
                                 @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
-                                
-                          
                         </div>
                     </div>
                     <div class="col-md-12">
@@ -37,8 +34,6 @@
                             @Html.LabelFor(model => model.Statement, htmlAttributes: new { @class = "control-label" })
 
                             @Html.EditorFor(model => model.Statement, new { htmlAttributes = new { @class = "form-control" } })
-
-
                         </div>
                     </div>
 
@@ -47,7 +42,6 @@
                             @Html.LabelFor(model => model.State, htmlAttributes: new { @class = "control-label" })
 
                             @Html.EnumDropDownListFor(model => model.State, htmlAttributes: new { @class = "form-control" })
-                          
                         </div>
                     </div>
 
@@ -56,19 +50,16 @@
                             @Html.LabelFor(model => model.UsersId, htmlAttributes: new { @class = "control-label" })
 
                             @Html.ListBoxFor(m => m.UsersId, Model.UserList, htmlAttributes: new { @class = "form-control" })
-                          
                         </div>
                     </div>
 
                     <div class="col-md-12">
                         <div class="form-group">
-                            
+
                                 <input type="submit" value="Create" class="btn btn-primary btn-block" />
-                          
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
@@ -78,7 +69,4 @@
 <div class="col-md-3 col-sm-3"></div>
 <div>
     @*<a href="@Url.Action("Index")"><i class="fa fa-chevron-left font-size-8" aria-hidden="true"></i> Back to List</a>*@
-
 </div>
-
-
