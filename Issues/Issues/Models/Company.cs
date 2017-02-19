@@ -24,5 +24,7 @@ namespace Issues.Models
     public byte[] Version { get; set; }
 
     public List<ApplicationUser> Users { get; set; }
+
+    public List<Project> Projects { get; set; }
   } 
 }

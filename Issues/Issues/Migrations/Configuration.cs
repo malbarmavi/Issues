@@ -6,7 +6,7 @@ namespace Issues.Migrations
   {
     public Configuration()
     {
-      AutomaticMigrationsEnabled = true;
+      AutomaticMigrationsEnabled = false;
     }
 
     protected override void Seed(Issues.Models.ApplicationDbContext context)

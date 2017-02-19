@@ -29,5 +29,9 @@ namespace Issues.Models
     public DateTime DateOfUpdate { get; set; }
 
     public List<ApplicationUser> Users { get; set; }
+
+    public Project Project { get; set; }
+
+    public int ProjectId { get; set; }
   }
 }

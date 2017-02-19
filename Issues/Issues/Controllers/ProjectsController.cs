@@ -14,7 +14,7 @@ namespace Issues.Controllers
     // GET: Projects
     public async Task<ActionResult> Index()
     {
-      var projects = db.Projects.Include(p => p.Company);
+      var projects = db.Project.Include(p => p.Company);
       return View(await projects.ToListAsync());
     }
 
@@ -25,7 +25,7 @@ namespace Issues.Controllers
       {
         return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
       }
-      Project project = await db.Projects.FindAsync(id);
+      Project project = await db.Project.FindAsync(id);
       if (project == null)
       {
         return HttpNotFound();
@@ -49,7 +49,7 @@ namespace Issues.Controllers
     {
       if (ModelState.IsValid)
       {
-        db.Projects.Add(project);
+        db.Project.Add(project);
         await db.SaveChangesAsync();
         return RedirectToAction("Index");
       }
@@ -65,7 +65,7 @@ namespace Issues.Controllers
       {
         return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
       }
-      Project project = await db.Projects.FindAsync(id);
+      Project project = await db.Project.FindAsync(id);
       if (project == null)
       {
         return HttpNotFound();
@@ -98,7 +98,7 @@ namespace Issues.Controllers
       {
         return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
       }
-      Project project = await db.Projects.FindAsync(id);
+      Project project = await db.Project.FindAsync(id);
       if (project == null)
       {
         return HttpNotFound();
@@ -112,8 +112,8 @@ namespace Issues.Controllers
     public async Task<ActionResult> DeleteConfirmed(int? id)
     {
       //TODO Add null check
-      Project project = await db.Projects.FindAsync(id);
-      db.Projects.Remove(project);
+      Project project = await db.Project.FindAsync(id);
+      db.Project.Remove(project);
       await db.SaveChangesAsync();
       return RedirectToAction("Index");
     }

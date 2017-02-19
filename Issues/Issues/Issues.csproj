@@ -181,9 +181,25 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201702162351169_initial.cs" />
-    <Compile Include="Migrations\201702162351169_initial.Designer.cs">
-      <DependentUpon>201702162351169_initial.cs</DependentUpon>
+    <Compile Include="Migrations\201702180211288_initial.cs" />
+    <Compile Include="Migrations\201702180211288_initial.Designer.cs">
+      <DependentUpon>201702180211288_initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702180232119_AddCompanyModel.cs" />
+    <Compile Include="Migrations\201702180232119_AddCompanyModel.Designer.cs">
+      <DependentUpon>201702180232119_AddCompanyModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702180233286_AddProfileModel.cs" />
+    <Compile Include="Migrations\201702180233286_AddProfileModel.Designer.cs">
+      <DependentUpon>201702180233286_AddProfileModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702180236067_AddTasksModel.cs" />
+    <Compile Include="Migrations\201702180236067_AddTasksModel.Designer.cs">
+      <DependentUpon>201702180236067_AddTasksModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702180410206_AddProjectModel.cs" />
+    <Compile Include="Migrations\201702180410206_AddProjectModel.Designer.cs">
+      <DependentUpon>201702180410206_AddProjectModel.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -1058,54 +1074,7 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
-    <Content Include="Views\Web.config">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Shared\Error.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
-    <Content Include="Views\Account\ConfirmEmail.cshtml" />
-    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
-    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
-    <Content Include="Views\Account\ForgotPassword.cshtml" />
-    <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
-    <Content Include="Views\Account\Login.cshtml" />
-    <Content Include="Views\Account\Register.cshtml" />
-    <Content Include="Views\Account\ResetPassword.cshtml" />
-    <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
-    <Content Include="Views\Account\SendCode.cshtml" />
-    <Content Include="Views\Account\VerifyCode.cshtml" />
-    <Content Include="Views\Manage\AddPhoneNumber.cshtml" />
-    <Content Include="Views\Manage\ChangePassword.cshtml" />
-    <Content Include="Views\Manage\Index.cshtml" />
-    <Content Include="Views\Manage\ManageLogins.cshtml" />
-    <Content Include="Views\Manage\SetPassword.cshtml" />
-    <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
-    <Content Include="Views\Shared\Lockout.cshtml" />
-    <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Users\Index.cshtml" />
-    <Content Include="Views\Users\Create.cshtml" />
-    <Content Include="Views\Users\Edit.cshtml" />
-    <Content Include="Views\Users\Details.cshtml" />
-    <Content Include="Views\Users\Delete.cshtml" />
-    <Content Include="Views\Tasks\Delete.cshtml" />
-    <Content Include="Views\Tasks\Details.cshtml" />
-    <Content Include="Views\Tasks\Index.cshtml" />
-    <Content Include="Views\Profile\Index.cshtml" />
-    <Content Include="Views\Profile\Edit.cshtml" />
-    <Content Include="Views\Error\AccessDenied.cshtml" />
-    <Content Include="Views\Tasks\Edit.cshtml" />
-    <Content Include="Views\Tasks\Create.cshtml" />
     <Content Include="Scripts\version.json" />
-    <Content Include="Views\Projects\Create.cshtml" />
-    <Content Include="Views\Projects\Delete.cshtml" />
-    <Content Include="Views\Projects\Details.cshtml" />
-    <Content Include="Views\Projects\Edit.cshtml" />
-    <Content Include="Views\Projects\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -1117,8 +1086,20 @@
     <Content Include="Scripts\jquery-3.1.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201702162351169_initial.resx">
-      <DependentUpon>201702162351169_initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201702180211288_initial.resx">
+      <DependentUpon>201702180211288_initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702180232119_AddCompanyModel.resx">
+      <DependentUpon>201702180232119_AddCompanyModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702180233286_AddProfileModel.resx">
+      <DependentUpon>201702180233286_AddProfileModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702180236067_AddTasksModel.resx">
+      <DependentUpon>201702180236067_AddTasksModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702180410206_AddProjectModel.resx">
+      <DependentUpon>201702180410206_AddProjectModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
