@@ -59,12 +59,12 @@ namespace Issues.Controllers
           .Select(u => new { Id = u.Id, Name = $"{u.Profile.FirstName} {u.Profile.LastName}" })
           .ToList();
 
-      return View(new NewTaskViewMode() { UserList = new SelectList(users, "Id", "Name") });
+      return View(new NewTaskViewModel() { UserList = new SelectList(users, "Id", "Name") });
     }
 
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<ActionResult> Create(NewTaskViewMode model)
+    public async Task<ActionResult> Create(NewTaskViewModel model)
     {
       if (ModelState.IsValid)
       {
@@ -115,7 +115,7 @@ namespace Issues.Controllers
           .ToList();
       string[] taskUsersId = task.Users.Select(u => u.Id).ToArray();
 
-      EditTaskViewMode model = new EditTaskViewMode()
+      EditTaskViewModel model = new EditTaskViewModel()
       {
         Id = task.Id,
         Name = task.Name,
@@ -130,7 +130,7 @@ namespace Issues.Controllers
 
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<ActionResult> Edit(EditTaskViewMode model)
+    public async Task<ActionResult> Edit(EditTaskViewModel model)
     {
       if (ModelState.IsValid)
       {

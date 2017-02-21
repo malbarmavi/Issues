@@ -4,16 +4,17 @@ using System.Web.Mvc;
 
 namespace Issues.ViewModels
 {
-  public class NewTaskViewMode
+  public class EditTaskViewModel
   {
-    [Key]
+    [Required]
     public int Id { get; set; }
 
     [Required]
-    [MaxLength(150)]
+    [MaxLength(100)]
     public string Name { get; set; }
 
     [Required]
+    [MaxLength(250)]
     public string Statement { get; set; }
 
     [Timestamp]
@@ -22,7 +23,6 @@ namespace Issues.ViewModels
     [Required]
     public TaskState State { get; set; }
 
-    [Display(Name = "Users")]
     public string[] UsersId { get; set; }
 
     public SelectList UserList { get; set; }
