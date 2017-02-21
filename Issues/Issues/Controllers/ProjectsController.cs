@@ -45,9 +45,6 @@ namespace Issues.Controllers
       return View();
     }
 
-    // POST: Projects/Create
-    // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-    // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
     [HttpPost]
     [ValidateAntiForgeryToken]
     public async Task<ActionResult> Create(NewProjectViewModel model)
@@ -70,7 +67,7 @@ namespace Issues.Controllers
         return RedirectToAction("Index");
       }
 
-     
+
       return View(model);
     }
 
@@ -86,25 +83,43 @@ namespace Issues.Controllers
       {
         return HttpNotFound();
       }
-      ViewBag.CompanyId = new SelectList(db.Company, "Id", "Name", project.CompanyId);
-      return View(project);
+
+      EditProjectViewModel model = new EditProjectViewModel()
+      {
+        Id = project.Id,
+        Name = project.Name,
+        Description = project.Description,
+        Version = project.Version
+      };
+      return View(model);
     }
 
-    // POST: Projects/Edit/5
-    // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-    // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<ActionResult> Edit([Bind(Include = "Id,Name,Description,Version,DateOfCreate,DateOfUpdate,CompanyId")] Project project)
+    public async Task<ActionResult> Edit(EditProjectViewModel model)
     {
       if (ModelState.IsValid)
       {
+        //db.Entry(project).State = EntityState.Modified;
+
+        Project project = db.Project.Include(p => p.Company).Single(p => p.Id == model.Id);
+
+        if (project == null)
+        {
+          return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+        }
+
+        project.Name = model.Name;
+        project.Description = model.Description;
+        project.Version = model.Version;
+        project.DateOfUpdate = DateTime.Now;
+
         db.Entry(project).State = EntityState.Modified;
         await db.SaveChangesAsync();
         return RedirectToAction("Index");
       }
-      ViewBag.CompanyId = new SelectList(db.Company, "Id", "Name", project.CompanyId);
-      return View(project);
+
+      return View(model);
     }
 
     // GET: Projects/Delete/5

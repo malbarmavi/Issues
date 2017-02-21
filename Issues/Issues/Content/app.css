@@ -288,3 +288,9 @@ footer {
 .card-list .col-md-4, .card-list .col-sm-6, .card-list .col-xs-12 {
   width: 100%; }
 
+.form-group label span {
+  font-weight: normal; }
+
+.text-normal span {
+  font-weight: normal; }
+

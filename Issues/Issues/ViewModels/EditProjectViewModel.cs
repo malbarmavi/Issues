@@ -6,8 +6,11 @@ using System.Web;
 
 namespace Issues.ViewModels
 {
-  public class NewProjectViewModel
+  public class EditProjectViewModel
   {
+
+    public int Id { get; set; }
+
     [Required]
     [MaxLength(100)]
     public string Name { get; set; }
@@ -15,5 +18,8 @@ namespace Issues.ViewModels
     [Required]
     [MaxLength(250)]
     public string Description { get; set; }
+
+    [Timestamp]
+    public byte[] Version { get; set; }
   }
 }

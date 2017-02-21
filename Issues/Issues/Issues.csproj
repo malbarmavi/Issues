@@ -216,6 +216,7 @@
     <Compile Include="Models\UsersList.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\EditProjectViewModel.cs" />
     <Compile Include="ViewModels\EditTaskViewModel.cs" />
     <Compile Include="ViewModels\EditUserViewModel.cs" />
     <Compile Include="ViewModels\NewProjectViewModel.cs" />
