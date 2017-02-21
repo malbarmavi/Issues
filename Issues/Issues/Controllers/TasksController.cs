@@ -1,5 +1,6 @@
 ﻿using Issues.Models;
 using Issues.ViewModels;
+using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -59,7 +60,16 @@ namespace Issues.Controllers
           .Select(u => new { Id = u.Id, Name = $"{u.Profile.FirstName} {u.Profile.LastName}" })
           .ToList();
 
-      return View(new NewTaskViewModel() { UserList = new SelectList(users, "Id", "Name") });
+      string currentUserId = User.Identity.GetUserId();
+      int companyId = db.Users.Single(a => a.Id == currentUserId).CompanyId;
+
+      var projectsList = db.Project
+        .Include(p => p.Company)
+        .Where(p => p.CompanyId == companyId)
+        .Select(p => new { Id = p.Id, Name = p.Name })
+        .ToList();
+
+      return View(new NewTaskViewModel() { UsersList = new SelectList(users, "Id", "Name"), ProjectsList = new SelectList(projectsList, "Id", "Name") });
     }
 
     [HttpPost]
@@ -77,7 +87,8 @@ namespace Issues.Controllers
           State = model.State,
           DateOfCreate = DateTime.Now,
           DateOfUpdate = DateTime.Now,
-          Users = users
+          Users = users,
+          ProjectId = model.ProjectId
         };
 
         db.Tasks.Add(task);
@@ -90,7 +101,17 @@ namespace Issues.Controllers
         .Select(u => new { Id = u.Id, Name = $"{u.Profile.FirstName} {u.Profile.LastName}" })
         .ToList();
 
-      model.UserList = new SelectList(usersList, "Id", "Name", model.UsersId);
+      string currentUserId = User.Identity.GetUserId();
+      int companyId = db.Users.Single(a => a.Id == currentUserId).CompanyId;
+
+      var projectsList = db.Project
+        .Include(p => p.Company)
+        .Where(p => p.CompanyId == companyId)
+        .Select(p => new { Id = p.Id, Name = p.Name })
+        .ToList();
+
+      model.ProjectsList = new SelectList(projectsList, "Id", "Name", model.ProjectId);
+      model.UsersList = new SelectList(usersList, "Id", "Name", model.UsersId);
 
       return View(model);
     }
@@ -115,6 +136,17 @@ namespace Issues.Controllers
           .ToList();
       string[] taskUsersId = task.Users.Select(u => u.Id).ToArray();
 
+
+      string currentUserId = User.Identity.GetUserId();
+      int companyId = db.Users.Single(a => a.Id == currentUserId).CompanyId;
+
+      var projectsList = db.Project
+        .Include(p => p.Company)
+        .Where(p => p.CompanyId == companyId)
+        .Select(p => new { Id = p.Id, Name = p.Name })
+        .ToList();
+
+
       EditTaskViewModel model = new EditTaskViewModel()
       {
         Id = task.Id,
@@ -122,8 +154,11 @@ namespace Issues.Controllers
         State = task.State,
         Statement = task.Statement,
         UsersId = taskUsersId,
-        UserList = new SelectList(users, "Id", "Name", taskUsersId)
-      };
+        UserList = new SelectList(users, "Id", "Name", taskUsersId),
+        Version = task.Version,
+        ProjectId = task.ProjectId,
+        ProjectsList =  new SelectList(projectsList, "Id", "Name")
+    };
 
       return View(model);
     }
@@ -134,7 +169,7 @@ namespace Issues.Controllers
     {
       if (ModelState.IsValid)
       {
-        Tasks task = await db.Tasks.Include(testc => testc.Users).SingleAsync(t => t.Id == model.Id);
+        Tasks task = await db.Tasks.Include(t => t.Users).SingleAsync(t => t.Id == model.Id);
 
         if (task == null)
         {
@@ -146,6 +181,7 @@ namespace Issues.Controllers
         task.Statement = model.Statement;
         task.Users = db.Users.Where(u => model.UsersId.Contains(u.Id)).ToList();
         task.DateOfUpdate = DateTime.Now;
+        task.ProjectId = model.ProjectId;
 
         db.Entry(task).State = EntityState.Modified;
         await db.SaveChangesAsync();

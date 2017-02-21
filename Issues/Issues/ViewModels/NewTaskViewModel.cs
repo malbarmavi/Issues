@@ -22,9 +22,14 @@ namespace Issues.ViewModels
     [Required]
     public TaskState State { get; set; }
 
+    [Display(Name = "Projects")]
+    public int ProjectId { get; set; }
+
+    public SelectList ProjectsList { get; set; }
+
     [Display(Name = "Users")]
     public string[] UsersId { get; set; }
 
-    public SelectList UserList { get; set; }
+    public SelectList UsersList { get; set; }
   }
 }
